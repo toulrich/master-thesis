@@ -3,9 +3,12 @@
 \contentsline {chapter}{Symbols}{ix}{chapter*.8}
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
 \contentsline {chapter}{\numberline {2}Related Works}{3}{chapter.2}
-\contentsline {chapter}{\numberline {3}Admittance Control}{4}{chapter.3}
-\contentsline {chapter}{\numberline {4}Obstacle Avoidance}{5}{chapter.4}
-\contentsline {chapter}{\numberline {5}Manipulability Optimization}{6}{chapter.5}
+\contentsline {chapter}{\numberline {3}Mobile Manipulator}{4}{chapter.3}
+\contentsline {section}{\numberline {3.1}Ridgeback}{4}{section.3.1}
+\contentsline {section}{\numberline {3.2}Universal Robot 10}{4}{section.3.2}
+\contentsline {section}{\numberline {3.3}Gripper and Force-Torque Sensor}{4}{section.3.3}
+\contentsline {chapter}{\numberline {4}Admittance Control}{5}{chapter.4}
+\contentsline {chapter}{\numberline {5}Obstacle Avoidance}{6}{chapter.5}
 \contentsline {chapter}{\numberline {6}Results}{7}{chapter.6}
 \contentsline {chapter}{\numberline {7}Discussion}{8}{chapter.7}
 \contentsline {chapter}{\numberline {8}Future Work}{9}{chapter.8}

@@ -1,10 +1,35 @@
 \chapter{Related Works}
 
+\chapter{Mobile Manipulator}
+We conduct or research on a mobile manipulator, lovingly called the \emph{Thing}. It is composed of three main components, on which we elaborate in detail in this chapter. A robot platform is the first, follow by a 6-DOF robot arm with a gripper at it's end. A force torque sensor is embedded, in the wrist of the gripper. The manipulator is an out of the box product bought from Clearpath, which collaborate with UR and Robotiq and mount the parts on the platform in house.
+
+\section{Ridgeback}
+The ridgeback is an omnidirectional robot platform designed by Clearpath for indoor movement and payload carrying tasks, such as autonomous warehousing for example. It is a fully integrated system with sensors, actuation and control and features a native ROS interface. Onboard sensors consist of an IMU and a front facing Hokuyo laser range finder (LIDAR) and a Kinect2 camera and wheel odometry. Optionally, a second, rear facing LIDAR can be mounted for full \unit[360]{\textdegree} coverage.The broad range of sensors, it's flexibility and low drift in odometry makes the ridgeback a suitable and popular platform for research in controlled indoor environments.
+
+\begin{table}[h]
+\begin{center}
+ \caption{Clearpath Ridgeback Specifications}\vspace{1ex}
+ \label{tab:ridgeback}
+ \begin{tabular}{ll}
+ \hline
+ Length & \unit[960]{mm}\\
+ Width & \unit[793]{mm}\\
+ Height & \unit[296]{mm}\\
+ Weight & \unit[135]{kg}\\
+ Maximum payload & \unit[100]{kg}\\
+ Maximum velocity & \unitfrac[1.1]{m}{s}\\
+ Average power consumption & \unit[800]{W}\\
+ \hline
+ \end{tabular}
+\end{center}
+\end{table}
+\section{Universal Robot 10}
+
+
+\section{Gripper and Force-Torque Sensor}
 \chapter{Admittance Control}
 
 \chapter{Obstacle Avoidance}
-
-\chapter{Manipulability Optimization}
 
 \chapter{Results}
 

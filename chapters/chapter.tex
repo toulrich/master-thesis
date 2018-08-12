@@ -1,10 +1,17 @@
 \chapter{Related Works}
 
 \chapter{Mobile Manipulator}
-We conduct or research on a mobile manipulator, lovingly called the \emph{Thing}. It is composed of three main components, on which we elaborate in detail in this chapter. A robot platform is the first, follow by a 6-DOF robot arm with a gripper at it's end. A force torque sensor is embedded, in the wrist of the gripper. The manipulator is an out of the box product bought from Clearpath, which collaborate with UR and Robotiq and mount the parts on the platform in house.
+We conduct or research on a mobile manipulator, lovingly called the \emph{Thing}. It is composed of three main components, on which we elaborate in detail in this chapter. A robot platform is the first, follow by a six degrees of freedom (DOF) robot arm with a gripper at it's end. A force torque sensor is embedded, in the wrist of the gripper. The manipulator is an out of the box product bought from Clearpath, which collaborate with UR and Robotiq and mount the parts on the platform in house.
 
 \section{Ridgeback}
 The ridgeback is an omnidirectional robot platform designed by Clearpath for indoor movement and payload carrying tasks, such as autonomous warehousing for example. It is a fully integrated system with sensors, actuation and control and features a native ROS interface. Onboard sensors consist of an IMU and a front facing Hokuyo laser range finder (LIDAR) and a Kinect2 camera and wheel odometry. Optionally, a second, rear facing LIDAR can be mounted for full \unit[360]{\textdegree} coverage.The broad range of sensors, it's flexibility and low drift in odometry makes the ridgeback a suitable and popular platform for research in controlled indoor environments.
+
+\begin{figure}
+   \centering
+   \includegraphics[width=0.75\textwidth]{images/ridgeback.png}
+   \caption{Clearpath Ridgeback}
+   \label{pics:ridgeback}
+\end{figure}
 
 \begin{table}[h]
 \begin{center}
@@ -23,19 +30,104 @@ The ridgeback is an omnidirectional robot platform designed by Clearpath for ind
  \end{tabular}
 \end{center}
 \end{table}
+
 \section{Universal Robot 10}
 
+\begin{figure}
+   \centering
+   \includegraphics[width=0.75\textwidth]{images/ur10.png}
+   \caption{Universal Robot 10}
+   \label{pics:ur10}
+\end{figure}
 
-\section{Gripper and Force-Torque Sensor}
+The UR10 is an collaborative industrial robot arm by Universal Robots. It has six DOF and can support payloads up to \unit[10]{kg}.
+
+\begin{table}[h]
+\begin{center}
+ \caption{Universal Robot 10 Specifications}\vspace{1ex}
+ \label{tab:ur10}
+ \begin{tabular}{ll}
+ \hline
+ Reach & \unit[1300]{mm} \\
+ Weight & \unit[1.5]{kg}\\
+ Repeatability & \unit[0.1]{mm} \\
+ Maximum payload & \unit[10]{kg}\\
+ Maximum tool velocity & \unitfrac[1]{m}{s}\\
+ Degrees of freedom & 6 rotating joints \\
+ Average power consumption & \unit[]{W}\\
+ \hline
+ \end{tabular}
+\end{center}
+\end{table}
+
+\section{Gripper}
+
+\begin{figure}
+   \centering
+   \includegraphics[width=0.75\textwidth]{images/robotiq_gripper.jpg}
+   \caption{Robotiq 3-Finger Adaptive Robot Gripper}
+   \label{pics:robotiq_gripper}
+\end{figure}
+
+\begin{table}[h]
+\begin{center}
+ \caption{Robotiq 3-Finger Adaptive Robot Gripper Specifications}\vspace{1ex}
+ \label{tab:robotiq_gripper}
+ \begin{tabular}{ll}
+ \hline
+ Weight & \unit[2.3]{kg}\\
+ Repeatability & \unit[0.1]{mm} \\
+ Maximum payload (encompassing grip) & \unit[10]{kg}\\
+ Gripper opening & \unit[0 to 155]{mm} \\
+ Object diameter for encompassing & \unit[20 to 155]{mm}\\
+ Grip force & \unit[30 to 70]{N} \\
+ Minimum power consumption & \unit[4.1]{W} \\
+ Peak power (at maximum gripping force) & \unit[36]{W}\\
+ \hline
+ \end{tabular}
+\end{center}
+\end{table}
+
+\section{Force-Torque Sensor}
+
+\begin{figure}
+   \centering
+   \includegraphics[width=0.75\textwidth]{images/robotiq_ft.jpg}
+   \caption{Robotiq FT 300 Force Torque Sensor}
+   \label{pics:robotiq_ft}
+\end{figure}
+
+\begin{savenotes}
+\begin{table}[h]
+\begin{center}
+ \caption{Robotiq FT 300 Force Torque Sensor Specifications}\vspace{1ex}
+ \label{tab:robotiq_ft}
+ \begin{tabular}{ll}
+ \hline
+ \textbf{Measuring range} & \\
+ Force $F_x, F_y, F_z$ & \unit[$\pm 300$]{N} \\
+ Moment $M_x, M_y, M_z$ & \unit[$\pm 30$]{Nm} \\ \hline
+ \textbf{Signal noise}\footnote{Signal noise is the standard deviation of the signal measured over a period of one second.} &\\
+ Force $F_x, F_y, F_z$ & \unit[0.1]{N} / \unit[1]{N} \\
+ Moment $M_x, M_y$ & \unit[0.05]{Nm} / \unit[0.02]{Nm} \\
+ Moment $M_z$ & \unit[0.03]{Nm} / \unit[0.01]{Nm} \\ \hline
+ Data output rate & \unit[100]{Hz} \\
+ Weight & \unit[300]{g}\\
+ \hline
+ \end{tabular}
+\end{center}
+\end{table}
+\end{savenotes}
+
+\chapter{Thing Control Structure}
+
 \chapter{Admittance Control}
 
 \chapter{Obstacle Avoidance}
 
 \chapter{Results}
 
-\chapter{Discussion}
-
-\chapter{Future Work}
+\chapter{Conclusions}
 
 \chapter{Einige wichtige Hinweise zum Arbeiten mit \LaTeX\ }
 \label{sec:latexumg}

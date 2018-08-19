@@ -2,7 +2,7 @@
 \BOOKMARK [0][-]{chapter*.7}{Abstract}{}% 2
 \BOOKMARK [0][-]{chapter*.8}{Symbols}{}% 3
 \BOOKMARK [0][-]{chapter.1}{Introduction}{}% 4
-\BOOKMARK [0][-]{chapter.2}{Related Works}{}% 5
+\BOOKMARK [0][-]{chapter.2}{Related Work}{}% 5
 \BOOKMARK [0][-]{chapter.3}{Mobile Manipulator}{}% 6
 \BOOKMARK [1][-]{section.3.1}{Ridgeback}{chapter.3}% 7
 \BOOKMARK [1][-]{section.3.2}{Universal Robot 10}{chapter.3}% 8
@@ -11,16 +11,18 @@
 \BOOKMARK [0][-]{chapter.4}{Thing Control Structure}{}% 11
 \BOOKMARK [0][-]{chapter.5}{Admittance Control}{}% 12
 \BOOKMARK [0][-]{chapter.6}{Obstacle Avoidance}{}% 13
-\BOOKMARK [0][-]{chapter.7}{Results}{}% 14
-\BOOKMARK [0][-]{chapter.8}{Conclusions}{}% 15
-\BOOKMARK [0][-]{chapter.9}{Einige wichtige Hinweise zum Arbeiten mit LaTeX }{}% 16
-\BOOKMARK [1][-]{section.9.1}{Gliederungen}{chapter.9}% 17
-\BOOKMARK [1][-]{section.9.2}{Referenzen und Verweise}{chapter.9}% 18
-\BOOKMARK [1][-]{section.9.3}{Aufz\344hlungen}{chapter.9}% 19
-\BOOKMARK [1][-]{section.9.4}{Erstellen einer Tabelle}{chapter.9}% 20
-\BOOKMARK [1][-]{section.9.5}{Einbinden einer Grafik}{chapter.9}% 21
-\BOOKMARK [1][-]{section.9.6}{Mathematische Formeln}{chapter.9}% 22
-\BOOKMARK [1][-]{section.9.7}{Weitere n\374tzliche Befehle}{chapter.9}% 23
-\BOOKMARK [0][-]{section.9.7}{Bibliography}{}% 24
-\BOOKMARK [0][-]{appendix.A}{Irgendwas}{}% 25
-\BOOKMARK [0][-]{appendix.B}{Datasheets}{}% 26
+\BOOKMARK [1][-]{section.6.1}{Global Planner}{chapter.6}% 14
+\BOOKMARK [1][-]{section.6.2}{Local Planner}{chapter.6}% 15
+\BOOKMARK [0][-]{chapter.7}{Results}{}% 16
+\BOOKMARK [0][-]{chapter.8}{Conclusions}{}% 17
+\BOOKMARK [0][-]{chapter.9}{Einige wichtige Hinweise zum Arbeiten mit LaTeX }{}% 18
+\BOOKMARK [1][-]{section.9.1}{Gliederungen}{chapter.9}% 19
+\BOOKMARK [1][-]{section.9.2}{Referenzen und Verweise}{chapter.9}% 20
+\BOOKMARK [1][-]{section.9.3}{Aufz\344hlungen}{chapter.9}% 21
+\BOOKMARK [1][-]{section.9.4}{Erstellen einer Tabelle}{chapter.9}% 22
+\BOOKMARK [1][-]{section.9.5}{Einbinden einer Grafik}{chapter.9}% 23
+\BOOKMARK [1][-]{section.9.6}{Mathematische Formeln}{chapter.9}% 24
+\BOOKMARK [1][-]{section.9.7}{Weitere n\374tzliche Befehle}{chapter.9}% 25
+\BOOKMARK [0][-]{chapter*.12}{Bibliography}{}% 26
+\BOOKMARK [0][-]{appendix.A}{Irgendwas}{}% 27
+\BOOKMARK [0][-]{appendix.B}{Datasheets}{}% 28

@@ -2,7 +2,7 @@
 \contentsline {chapter}{Abstract}{vii}{chapter*.7}
 \contentsline {chapter}{Symbols}{ix}{chapter*.8}
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
-\contentsline {chapter}{\numberline {2}Related Works}{3}{chapter.2}
+\contentsline {chapter}{\numberline {2}Related Work}{3}{chapter.2}
 \contentsline {chapter}{\numberline {3}Mobile Manipulator}{4}{chapter.3}
 \contentsline {section}{\numberline {3.1}Ridgeback}{4}{section.3.1}
 \contentsline {section}{\numberline {3.2}Universal Robot 10}{4}{section.3.2}
@@ -11,6 +11,8 @@
 \contentsline {chapter}{\numberline {4}Thing Control Structure}{8}{chapter.4}
 \contentsline {chapter}{\numberline {5}Admittance Control}{9}{chapter.5}
 \contentsline {chapter}{\numberline {6}Obstacle Avoidance}{10}{chapter.6}
+\contentsline {section}{\numberline {6.1}Global Planner}{10}{section.6.1}
+\contentsline {section}{\numberline {6.2}Local Planner}{10}{section.6.2}
 \contentsline {chapter}{\numberline {7}Results}{11}{chapter.7}
 \contentsline {chapter}{\numberline {8}Conclusions}{12}{chapter.8}
 \contentsline {chapter}{\numberline {9}Einige wichtige Hinweise zum Arbeiten mit \LaTeX \ }{13}{chapter.9}
@@ -21,6 +23,6 @@
 \contentsline {section}{\numberline {9.5}Einbinden einer Grafik}{15}{section.9.5}
 \contentsline {section}{\numberline {9.6}Mathematische Formeln}{15}{section.9.6}
 \contentsline {section}{\numberline {9.7}Weitere n\IeC {\"u}tzliche Befehle}{16}{section.9.7}
-\contentsline {chapter}{Bibliography}{17}{section.9.7}
-\contentsline {chapter}{\numberline {A}Irgendwas}{17}{appendix.A}
-\contentsline {chapter}{\numberline {B}Datasheets}{19}{appendix.B}
+\contentsline {chapter}{Bibliography}{17}{chapter*.12}
+\contentsline {chapter}{\numberline {A}Irgendwas}{19}{appendix.A}
+\contentsline {chapter}{\numberline {B}Datasheets}{21}{appendix.B}

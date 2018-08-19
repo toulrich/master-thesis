@@ -1,10 +1,10 @@
-\chapter{Related Works}
+\chapter{Related Work}
+As with many fields in robotics, Human Robot Interaction (HRI) has seen a lot of developement in the last twenty years. Research has come from teleoperated assistive robots tho dynamically and independently collaborating robots. This advancement is expressed by the newly joined terms in literature to differentiate between types of interaction and level of autonomy for the robot.
 
 \chapter{Mobile Manipulator}
-We conduct or research on a mobile manipulator, lovingly called the \emph{Thing}. It is composed of three main components, on which we elaborate in detail in this chapter. A robot platform is the first, follow by a six degrees of freedom (DOF) robot arm with a gripper at it's end. A force torque sensor is embedded, in the wrist of the gripper. The manipulator is an out of the box product bought from Clearpath, which collaborate with UR and Robotiq and mount the parts on the platform in house.
+We conduct or research on a mobile manipulator, lovingly called the \emph{Thing}. It is composed of four main components, on which we elaborate in detail in this chapter. The first is the Ridgeback, a omnidirectional robot platform , followed by the UR10, a six degrees of freedom (DOF) robot arm with a three finger gripper as it's end effector. A force torque sensor is embedded in the wrist of the gripper. The whole manipulator is an out of the box system assembled by Clearpath, which collaborates with Universal Robots and Robotiq and mounts the parts on the platform in house.
 
 \section{Ridgeback}
-The ridgeback is an omnidirectional robot platform designed by Clearpath for indoor movement and payload carrying tasks, such as autonomous warehousing for example. It is a fully integrated system with sensors, actuation and control and features a native ROS interface. Onboard sensors consist of an IMU and a front facing Hokuyo laser range finder (LIDAR) and a Kinect2 camera and wheel odometry. Optionally, a second, rear facing LIDAR can be mounted for full \unit[360]{\textdegree} coverage.The broad range of sensors, it's flexibility and low drift in odometry makes the ridgeback a suitable and popular platform for research in controlled indoor environments.
 
 \begin{figure}
    \centering
@@ -31,6 +31,10 @@ The ridgeback is an omnidirectional robot platform designed by Clearpath for ind
 \end{center}
 \end{table}
 
+The ridgeback is an omnidirectional robot platform designed by Clearpath for indoor movement and payload carrying tasks, such as autonomous warehousing for example. It is a fully integrated system with sensors, actuation and control and features a native ROS interface. Onboard sensors consist of an IMU and a front facing Hokuyo laser range finder (LIDAR) and a Kinect2 camera and wheel odometry. Optionally, a second, rear facing LIDAR can be mounted for full \unit[360]{\textdegree} coverage.The broad range of sensors, it's flexibility and low drift in odometry makes the Ridgeback a suitable and popular platform for research in controlled indoor environments.
+
+Additionally, the Ridgeback houses the onboard computer that runs the low-level drivers of all the elements of the manipulator. On top thereof, there is a high-level driver that ensures accord and offers a ROS interface for the user to connect to.
+
 \section{Universal Robot 10}
 
 \begin{figure}
@@ -40,7 +44,7 @@ The ridgeback is an omnidirectional robot platform designed by Clearpath for ind
    \label{pics:ur10}
 \end{figure}
 
-The UR10 is an collaborative industrial robot arm by Universal Robots. It has six DOF and can support payloads up to \unit[10]{kg}.
+The UR10 is an collaborative industrial robot arm by Universal Robots. It has six rotary joints with gives it six DOF and can support payloads up to \unit[10]{kg}. Together with it's little brother the UR5, it is widely regarded as the standard manipulator within robotics research. Hence, extensive platform and software integration resources are available and ROS is supported out of the box.
 
 \begin{table}[h]
 \begin{center}
@@ -124,6 +128,25 @@ The UR10 is an collaborative industrial robot arm by Universal Robots. It has si
 \chapter{Admittance Control}
 
 \chapter{Obstacle Avoidance}
+\section{Global Planner}
+\section{Local Planner}
+
+We use the Dynamic Window Approach (DWA) \citep{fox1997dynamic} for local collision avoidance. This well-known algorithm produces command velocities for a planar robot given vehicle dynamics and obstacle measurements. The basic assumption is that the robot moves instantaneously on circular arcs with a translational velocity $v$ and a rotational velocity $\omega$. Thus, the complexity is greatly simplified and calculations are be performed in the 2D velocity space $(v,\omega)$. Within this space, we compute three sets of velocity pairs,  subsequently called \emph{windows} for every iteration of the algorithm.
+
+The \emph{obstacle window} $V_o$ are the measurements of any obstacles, e.g. taken by a range laser sensor and transformed from cartesian to $v,\omega$ space.
+
+The \emph{static window} $V_s$ expresses the constraint velocities of the vehicle, i.e., absolute maximum and minimum velocity. As the name suggests, these parameters are usually static and do not need to be recalculated every step.
+
+The \emph{dynamic window} $V_d$ are the vehicle dynamics, i.e., velocities that are physically feasible for the robot to reach within one timestep. It's size is defined by the maximal acceleration and the current velocity of the robot.
+
+\begin{equation}
+V_r = V_o \cap V_s \cap V_d
+ 	\label{eq:dwa_intersection}
+\end{equation}
+
+As Equation \cref{eq:dwa_intersection} shows, the intersection of these three sets gives us the resulting window $V_r$ of feasible velocity pairs, that guarantee no collision with an obstacle for the next step.
+
+A cost function is then applied to find the $(v,\omega)$ pair, that maximizes the objective within $V_r$. Elements are heading, distance to goal and velocity terms.
 
 \chapter{Results}
 

@@ -123,15 +123,23 @@ The UR10 is an collaborative industrial robot arm by Universal Robots. It has si
 \end{table}
 \end{savenotes}
 
-\chapter{Thing Control Structure}
-
-\chapter{Admittance Control}
 
 \chapter{Obstacle Avoidance}
-\section{Global Planner}
-\section{Local Planner}
+Ever since robots faced the task of autonomous navigation, obstacle avoidance has been a crucial element of it. There are numerous approaches to tackle the problem, varying in degrees of foresight and influence on the path planner.
 
-We use the Dynamic Window Approach (DWA) \citep{fox1997dynamic} for local collision avoidance. This well-known algorithm produces command velocities for a planar robot given vehicle dynamics and obstacle measurements. The basic assumption is that the robot moves instantaneously on circular arcs with a translational velocity $v$ and a rotational velocity $\omega$. Thus, the complexity is greatly simplified and calculations are be performed in the 2D velocity space $(v,\omega)$. Within this space, we compute three sets of velocity pairs,  subsequently called \emph{windows} for every iteration of the algorithm.
+The problem can be seperated into two categories, path planning on a global scale and on a local scale. The first category bundles algorithms that take a goal position and a current position of a robot and calculate the optimal path (usually the shortest path) in between, given some objective function. Since the distance to the goal is normally greater than the range of any obstacle detection sensor, these algorithms need a full map of the environment. Widely used examples are A*, Djikstra, Bit* and RRT.
+
+In contrast, path planning on a local scale takes obstacle detection sensor information as an input and outputs commands to a drive unit, that meet the given objective, which is usually to avoid collisions and stay clear of an obstacle by a minimum distance. 
+
+A typical path planning infastructure on a robot consists of both a global and a local planner, where the global planner outputs a path to follow to the local planner, which in terms fuses that path with online obstacle detection sensor information to ensure it is indeed collision free and deviates from it if necessary.
+
+To find the path planning algorithm that best meets our needs, we must first examine what are the given inputs and the desired outputs of our system. As we already elaborated in \cref{sec:introduction}, we are working in a classical master-slave scenario, which means that the robot is trying to achieve the goal of its human counterpart and not its own. This manifests in the planner in such a way, that the input is the force and torque applied by the human and the robot has no global goal pose. Hence, we are inherently bound to iteratively updated goals within close proximity and there is no possibility nor need to apply global path planning techniqes and we focus only on local planners in the remainder of this chapter.
+
+\section{Local Planners}
+In this chapter, we discuss a selection of common local planning methods and their feasibility for the task at hand.
+\subsection{Velocity Obstacles}
+\subsection{Dynamic Window Approach}
+Dynamic Window Approach (DWA) \citep{fox1997dynamic} is a well-known algorithm that produces command velocities for a planar robot given vehicle dynamics and obstacle measurements. The basic assumption is that the robot moves instantaneously on circular arcs with a translational velocity $v$ and a rotational velocity $\omega$. Thus, the complexity is greatly simplified and calculations are be performed in the 2D velocity space $(v,\omega)$. Within this space, we compute three sets of velocity pairs,  subsequently called \emph{windows} for every iteration of the algorithm.
 
 The \emph{obstacle window} $V_o$ are the measurements of any obstacles, e.g. taken by a range laser sensor and transformed from cartesian to $v,\omega$ space.
 
@@ -144,12 +152,145 @@ V_r = V_o \cap V_s \cap V_d
  	\label{eq:dwa_intersection}
 \end{equation}
 
-As Equation \cref{eq:dwa_intersection} shows, the intersection of these three sets gives us the resulting window $V_r$ of feasible velocity pairs, that guarantee no collision with an obstacle for the next step.
+As \cref{eq:dwa_intersection} shows, the intersection of these three sets gives us the resulting window $V_r$ of feasible velocity pairs, that guarantee no collision with an obstacle for the next step.
 
 A cost function is then applied to find the $(v,\omega)$ pair, that maximizes the objective within $V_r$. Elements are heading, distance to goal and velocity terms.
 
-\chapter{Results}
+\subsection{Potential Fields}
+\chapter{Admittance Control}
+The term admittance and 
 
+\chapter{Implementation}
+\begin{figure}
+   \centering
+   \includegraphics[width=0.75\textwidth]{images/controller_overview.jpg}
+   \caption{Schematic of the controller. Arrows indicate information flow between the subsets of the control architecture.}
+   \label{pics:controller_overview}
+\end{figure}
+
+Flowchart of the whole algorithm comes here
+\section{Admittance Control and Obstacle Avoidance Fusion}
+\begin{figure}
+   \centering
+   \includegraphics[width=0.75\textwidth]{images/admittance_model.jpg}
+   \caption{Virtual spring mass damper system with two masses. Dotted arrows represent the path of the base (left) and the arm (right) over time, connected by the spring mass damper system.}
+   \label{pics:admittance_model}
+\end{figure}
+
+
+\subsection{Parameters}
+admittance parameters
+\subsection{Costmap}
+\begin{figure}
+   \centering
+   \includegraphics[width=0.75\textwidth]{images/costmap.png}
+   \caption{Costmap captured by the LIDAR during a test. YELLOW: Lethal, TURQUOISE: Inscribed, RED TO BLUE GRADIENT: Proximity to an obstacle, TRANSPARENT: Free space. }
+   \label{pics:costmap}
+\end{figure}
+
+\begin{description}
+  \item[Lethal] dini 
+  \item[Inscribed] sini
+  \item[Obstacle proximity]
+  \item[Freespace]
+\end{description}
+
+\begin{table}[h]
+\begin{center}
+ \caption{Costmap Parameters.}\vspace{1ex}
+ \label{tab:costmap_params}
+ \begin{tabular}{ll}
+ \hline
+Type & Local \\
+Update frequency & \unit{60}{Hz} \\
+Publish frequency & \unit{60}{Hz} \\ 
+Width & \unit{3}{m} \\
+Height & \unit{3}{m} \\
+Resolution & \unit{0.03}{m} \\
+Global frame & Base link \\
+Static map & False \\
+Rolling window & True \\
+Robot footprint & \unit{0.96 $\times$ 0.8}{m} \\
+Plugins used & Obstacles layer, inflater layer \\
+Inflater layer cost scaling factor & 10  \\
+Inflation radius & \unit{2}{m} \\
+ \hline
+ \end{tabular}
+\end{center}
+\end{table}
+
+\section{Inverse Kinematics}
+task priority solver (parameters?)
+\chapter{Results}
+We test the implementation of the previously elaborated algorithm on the Thing and list the performed tests and their results in this chapter.
+\section{Admittance Control Performance}
+Before any experiments on the fused algorithm can be performed, we first analyze the behaviour of the admittance controller in isolation. For this, we place the Thing in free space, i.e., in a a region with zero gradient and wegerregen the the three axes of the ridgeback seperately.
+
+\subsection{Force Excitement in X}
+\begin{figure}
+   \centering
+   \includegraphics[width=0.75\textwidth]{images/test18_x.jpg}
+   \caption{Velocity Response to Force Excitement in X}
+   \label{pics:test18_x}
+\end{figure}
+
+\subsection{Force Excitement in Y}
+\begin{figure}
+   \centering
+   \includegraphics[width=0.75\textwidth]{images/test18_y.jpg}
+   \caption{Velocity Response to Force Excitement in Y}
+   \label{pics:test18_y}
+\end{figure}
+\subsection{Force Excitement in Theta}
+\begin{figure}
+   \centering
+   \includegraphics[width=0.75\textwidth]{images/test18_theta.jpg}
+   \caption{Velocity Response to Force Excitement in $\theta$}
+   \label{pics:test18_theta}
+\end{figure}
+
+\section{Obstacle Avoidance Performance}
+\subsection{Frontal Obstacle}
+\begin{figure}
+   \centering
+   \includegraphics[width=0.75\textwidth]{images/test2.jpg}
+   \caption{Velocity response in X axis of the robot to external and obstacle force input while being pulled in a frontal obstacle.}
+   \label{pics:test2}
+\end{figure}
+
+\begin{figure}
+   \centering
+   \includegraphics[width=0.75\textwidth]{images/test2_costmap.jpg}
+   \caption{Costmap at \unit{34}{s} of the frontal test. Dark red indicate the obstacle and the robot base.}
+   \label{pics:test2costmap}
+\end{figure}
+
+
+
+\subsection{Corridor}
+\section{Real World Scenarios Performance}
+\subsection{Corner}
+\begin{figure}
+   \centering
+   \includegraphics[width=0.75\textwidth]{images/test16_setup2.jpg}
+   \caption{Setup of the \unit{2}{m} wide corner scenario.}
+   \label{pics:test16_setup}
+\end{figure}
+
+\begin{figure}
+   \centering
+   \includegraphics[width=0.75\textwidth]{images/test16.jpg}
+   \caption{Velocity response to external and obstacle force input in \unit{2}{m} wide corner scenario.}
+   \label{pics:test16}
+\end{figure}
+
+In this experiment, we asses the performance of the algorithm in a corrider with a corner. The width of corridor is \unit{2}{m} and we jointly carry the object through it. As we can see in \cref{pics:test16}, there is a negative peak in the negative $Y$
+direction, which is caused by the robot drifting close the outer wall as it was making the corner. This was due to the fact, that
+
+\subsection{Double Slalom}
+\subsection{Triple Slalom}
+\subsection{Cluttered Space 1}
+\subsection{Cluttered Space 2}
 \chapter{Conclusions}
 
 \chapter{Einige wichtige Hinweise zum Arbeiten mit \LaTeX\ }

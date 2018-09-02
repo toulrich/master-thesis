@@ -8,21 +8,40 @@
 \contentsline {section}{\numberline {3.2}Universal Robot 10}{4}{section.3.2}
 \contentsline {section}{\numberline {3.3}Gripper}{6}{section.3.3}
 \contentsline {section}{\numberline {3.4}Force-Torque Sensor}{6}{section.3.4}
-\contentsline {chapter}{\numberline {4}Thing Control Structure}{8}{chapter.4}
-\contentsline {chapter}{\numberline {5}Admittance Control}{9}{chapter.5}
-\contentsline {chapter}{\numberline {6}Obstacle Avoidance}{10}{chapter.6}
-\contentsline {section}{\numberline {6.1}Global Planner}{10}{section.6.1}
-\contentsline {section}{\numberline {6.2}Local Planner}{10}{section.6.2}
-\contentsline {chapter}{\numberline {7}Results}{11}{chapter.7}
-\contentsline {chapter}{\numberline {8}Conclusions}{12}{chapter.8}
-\contentsline {chapter}{\numberline {9}Einige wichtige Hinweise zum Arbeiten mit \LaTeX \ }{13}{chapter.9}
-\contentsline {section}{\numberline {9.1}Gliederungen}{13}{section.9.1}
-\contentsline {section}{\numberline {9.2}Referenzen und Verweise}{13}{section.9.2}
-\contentsline {section}{\numberline {9.3}Aufz\IeC {\"a}hlungen}{13}{section.9.3}
-\contentsline {section}{\numberline {9.4}Erstellen einer Tabelle}{14}{section.9.4}
-\contentsline {section}{\numberline {9.5}Einbinden einer Grafik}{15}{section.9.5}
-\contentsline {section}{\numberline {9.6}Mathematische Formeln}{15}{section.9.6}
-\contentsline {section}{\numberline {9.7}Weitere n\IeC {\"u}tzliche Befehle}{16}{section.9.7}
-\contentsline {chapter}{Bibliography}{17}{chapter*.12}
-\contentsline {chapter}{\numberline {A}Irgendwas}{19}{appendix.A}
-\contentsline {chapter}{\numberline {B}Datasheets}{21}{appendix.B}
+\contentsline {chapter}{\numberline {4}Obstacle Avoidance}{8}{chapter.4}
+\contentsline {section}{\numberline {4.1}Local Planners}{8}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Velocity Obstacles}{8}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}Dynamic Window Approach}{8}{subsection.4.1.2}
+\contentsline {subsection}{\numberline {4.1.3}Potential Fields}{9}{subsection.4.1.3}
+\contentsline {chapter}{\numberline {5}Admittance Control}{10}{chapter.5}
+\contentsline {chapter}{\numberline {6}Implementation}{11}{chapter.6}
+\contentsline {section}{\numberline {6.1}Admittance Control and Obstacle Avoidance Fusion}{11}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}Parameters}{11}{subsection.6.1.1}
+\contentsline {subsection}{\numberline {6.1.2}Costmap}{11}{subsection.6.1.2}
+\contentsline {section}{\numberline {6.2}Inverse Kinematics}{11}{section.6.2}
+\contentsline {chapter}{\numberline {7}Results}{14}{chapter.7}
+\contentsline {section}{\numberline {7.1}Admittance Control Performance}{14}{section.7.1}
+\contentsline {subsection}{\numberline {7.1.1}Force Excitement in X}{16}{subsection.7.1.1}
+\contentsline {subsection}{\numberline {7.1.2}Force Excitement in Y}{16}{subsection.7.1.2}
+\contentsline {subsection}{\numberline {7.1.3}Force Excitement in Theta}{16}{subsection.7.1.3}
+\contentsline {section}{\numberline {7.2}Obstacle Avoidance Performance}{16}{section.7.2}
+\contentsline {subsection}{\numberline {7.2.1}Frontal Obstacle}{16}{subsection.7.2.1}
+\contentsline {subsection}{\numberline {7.2.2}Corridor}{16}{subsection.7.2.2}
+\contentsline {section}{\numberline {7.3}Real World Scenarios Performance}{16}{section.7.3}
+\contentsline {subsection}{\numberline {7.3.1}Corner}{16}{subsection.7.3.1}
+\contentsline {subsection}{\numberline {7.3.2}Double Slalom}{17}{subsection.7.3.2}
+\contentsline {subsection}{\numberline {7.3.3}Triple Slalom}{17}{subsection.7.3.3}
+\contentsline {subsection}{\numberline {7.3.4}Cluttered Space 1}{17}{subsection.7.3.4}
+\contentsline {subsection}{\numberline {7.3.5}Cluttered Space 2}{17}{subsection.7.3.5}
+\contentsline {chapter}{\numberline {8}Conclusions}{18}{chapter.8}
+\contentsline {chapter}{\numberline {9}Einige wichtige Hinweise zum Arbeiten mit \LaTeX \ }{19}{chapter.9}
+\contentsline {section}{\numberline {9.1}Gliederungen}{19}{section.9.1}
+\contentsline {section}{\numberline {9.2}Referenzen und Verweise}{19}{section.9.2}
+\contentsline {section}{\numberline {9.3}Aufz\IeC {\"a}hlungen}{19}{section.9.3}
+\contentsline {section}{\numberline {9.4}Erstellen einer Tabelle}{20}{section.9.4}
+\contentsline {section}{\numberline {9.5}Einbinden einer Grafik}{21}{section.9.5}
+\contentsline {section}{\numberline {9.6}Mathematische Formeln}{21}{section.9.6}
+\contentsline {section}{\numberline {9.7}Weitere n\IeC {\"u}tzliche Befehle}{22}{section.9.7}
+\contentsline {chapter}{Bibliography}{23}{chapter*.12}
+\contentsline {chapter}{\numberline {A}Irgendwas}{25}{appendix.A}
+\contentsline {chapter}{\numberline {B}Datasheets}{27}{appendix.B}

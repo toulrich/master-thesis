@@ -8,10 +8,13 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: bibliography/references.bib
-"{" immediately follows a field name---line 13 of file bibliography/references.bib
- : url
- :    {http://wiki.ros.org/costmap_2d}
+Illegal end of database file---line 93 of file bibliography/references.bib
+ : }
+ :  
 I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "Raibert1986LeggedRobotsThatBalance"
+Warning--I didn't find a database entry for "Vukobratovic2004ZeroMomentPoint"
+Warning--I didn't find a database entry for "Pratt1995SEA"
 -- IEEEtranN.bst version 1.13 (2008/09/30) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
@@ -21,45 +24,45 @@ Reallocated global_strs (elt_size=20001) to 20 items from 10.
 Reallocated glb_str_end (elt_size=4) to 20 items from 10.
 
 Done.
-You've used 4 entries,
+You've used 3 entries,
             4749 wiz_defined-function locations,
-            966 strings with 8937 characters,
-and the built_in function-call counts, 3718 in all, are:
-= -- 326
-> -- 86
-< -- 34
-+ -- 46
+            960 strings with 8790 characters,
+and the built_in function-call counts, 2750 in all, are:
+= -- 249
+> -- 76
+< -- 21
++ -- 37
 - -- 16
-* -- 202
-:= -- 567
-add.period$ -- 8
-call.type$ -- 4
-change.case$ -- 7
-chr.to.int$ -- 76
-cite$ -- 4
-duplicate$ -- 238
-empty$ -- 273
-format.name$ -- 27
-if$ -- 824
+* -- 164
+:= -- 443
+add.period$ -- 6
+call.type$ -- 3
+change.case$ -- 6
+chr.to.int$ -- 45
+cite$ -- 3
+duplicate$ -- 178
+empty$ -- 176
+format.name$ -- 24
+if$ -- 590
 int.to.chr$ -- 1
-int.to.str$ -- 5
-missing$ -- 33
-newline$ -- 40
-num.names$ -- 12
-pop$ -- 80
+int.to.str$ -- 4
+missing$ -- 26
+newline$ -- 33
+num.names$ -- 9
+pop$ -- 59
 preamble$ -- 1
-purify$ -- 4
+purify$ -- 3
 quote$ -- 2
-skip$ -- 276
+skip$ -- 199
 stack$ -- 0
-substring$ -- 179
-swap$ -- 185
-text.length$ -- 7
+substring$ -- 107
+swap$ -- 136
+text.length$ -- 6
 text.prefix$ -- 0
 top$ -- 6
-type$ -- 56
+type$ -- 48
 warning$ -- 0
-while$ -- 20
+while$ -- 14
 width$ -- 0
-write$ -- 73
+write$ -- 59
 (There was 1 error message)

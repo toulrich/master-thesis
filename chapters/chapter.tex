@@ -1,8 +1,8 @@
 \chapter{Related Work}
-As with many fields in robotics, Human Robot Interaction (HRI) has seen a lot of developement in the last twenty years. Research has come from teleoperated assistive robots tho dynamically and independently collaborating robots. This advancement is expressed by the newly joined terms in literature to differentiate between types of interaction and level of autonomy for the robot.
+As with many fields in robotics, Human Robot Interaction (HRI) has seen a lot of developement in the last twenty years. Research has come from teleoperated assistive robots to dynamically and independently collaborating robots. This advancement is expressed by the newly joined terms in literature to differentiate between types of interaction and level of autonomy for the robot.
 
 \chapter{Mobile Manipulator}
-We conduct or research on a mobile manipulator, lovingly called the \emph{Thing}. It is composed of four main components, on which we elaborate in detail in this chapter. The first is the Ridgeback, a omnidirectional robot platform , followed by the UR10, a six degrees of freedom (DOF) robot arm with a three finger gripper as it's end effector. A force torque sensor is embedded in the wrist of the gripper. The whole manipulator is an out of the box system assembled by Clearpath, which collaborates with Universal Robots and Robotiq and mounts the parts on the platform in house.
+We conduct our research on a mobile manipulator, lovingly called the \emph{Thing}. It is composed of four main components, on which we elaborate in detail in this chapter. The first is the Ridgeback, a omnidirectional robot platform , followed by the UR10, a six degrees of freedom (DOF) robot arm with a three finger gripper as it's end effector. A force torque sensor is embedded in the wrist of the gripper. The whole manipulator is an out of the box system assembled by Clearpath, which collaborates with Universal Robots and Robotiq and mounts the parts on the platform in house.
 
 \section{Ridgeback}
 
@@ -124,6 +124,10 @@ The UR10 is an collaborative industrial robot arm by Universal Robots. It has si
 \end{savenotes}
 
 
+\chapter{Admittance Control}
+The term admittance is closely coupled to impedance \citep{hogan1985impedance}.
+
+
 \chapter{Obstacle Avoidance}
 Ever since robots faced the task of autonomous navigation, obstacle avoidance has been a crucial element of it. There are numerous approaches to tackle the problem, varying in degrees of foresight and influence on the path planner.
 
@@ -138,8 +142,18 @@ To find the path planning algorithm that best meets our needs, we must first exa
 \section{Local Planners}
 In this chapter, we discuss a selection of common local planning methods and their feasibility for the task at hand.
 \subsection{Velocity Obstacles}
+Velocity Obstacles (VO) \citep{fiorini1998motion}
+
+\begin{equation}
+p_{RO} + v_R t < r_R +r_O
+	\label{eq:vo_condition}
+\end{equation}
+
+\begin{equation}
+VO_{RO} = D TODO fill in
+\end{equation}
 \subsection{Dynamic Window Approach}
-Dynamic Window Approach (DWA) \citep{fox1997dynamic} is a well-known algorithm that produces command velocities for a planar robot given vehicle dynamics and obstacle measurements. The basic assumption is that the robot moves instantaneously on circular arcs with a translational velocity $v$ and a rotational velocity $\omega$. Thus, the complexity is greatly simplified and calculations are be performed in the 2D velocity space $(v,\omega)$. Within this space, we compute three sets of velocity pairs,  subsequently called \emph{windows} for every iteration of the algorithm.
+The Dynamic Window Approach (DWA) \citep{fox1997dynamic} is a well-known algorithm that produces command velocities for a planar robot given vehicle dynamics and obstacle measurements. The basic assumption is that the robot moves instantaneously on circular arcs with a translational velocity $v$ and a rotational velocity $\omega$. Thus, the complexity is greatly simplified and calculations are be performed in the 2D velocity space $(v,\omega)$. Within this space, we compute three sets of velocity pairs,  subsequently called \emph{windows} for every iteration of the algorithm.
 
 The \emph{obstacle window} $V_o$ are the measurements of any obstacles, e.g. taken by a range laser sensor and transformed from cartesian to $v,\omega$ space.
 
@@ -157,8 +171,61 @@ As \cref{eq:dwa_intersection} shows, the intersection of these three sets gives 
 A cost function is then applied to find the $(v,\omega)$ pair, that maximizes the objective within $V_r$. Elements are heading, distance to goal and velocity terms.
 
 \subsection{Potential Fields}
-\chapter{Admittance Control}
-The term admittance and 
+Potential fields are also a common tool in the mobile robotics field used for path planning. A virtual potential $U(q)$ at position $q = (x,y)$ affects the robot and drives him away from any maximum, like a ball rolling downhill \citep{siegwart2004autonomous}. It can be used to attract the robot to a goal by creating a local minimum and repulsing a robot from an obstacle by creating a local maximum.
+
+If the potential field is differentiable, we find that the resulting virtual force $F(q)$ that acts on the robot in position $q$ is then defined as 
+\begin{equation}
+F(q) = - \nabla U(q) 
+	\label{eq:pot_force}
+\end{equation}
+where $\nabla U(q)$ is the gradient of the potential field
+\begin{equation}
+\nabla U(q) = \begin{pmatrix}
+\frac{\partial U}{\partial x}
+\frac{\partial U}{\partial y}
+\end{pmatrix}
+\end{equation}
+
+
+The overall potential field is the sum of all attractive and repulsive potential fields
+\begin{equation}
+U(q) = U_{attr}(q) + U_{rep}(q)
+	\label{eq:pot_field}
+\end{equation}
+and by combining \ref{eq:pot_force} and \ref{eq:pot_field} we see the virtual force consists of:
+\begin{equation}
+\begin{aligned}
+F(q) &= F_{att}(q) + F_{rep}(q) \\
+&= -\nabla U_{att}(q)-\nabla U_{rep}(q)
+\end{aligned}
+\end{equation}
+
+
+An \textbf{attractive potential}, i.e. a goal is usually defined as a parabolic function
+
+\begin{equation}
+U_{att}(q) = \frac{1}{2} k_{att} \cdot {\rho_{goal}}^2(q)
+\end{equation}
+
+where $k_{att}$ is the scaling factor and $\rho_{goal}$ is the Euclidian distance to the goal:
+\begin{equation}
+\rho_{goal} = ||q-q_{goal}||
+\end{equation}
+
+
+A \textbf{repulsive potential}, i.e. an obstacle is zero if a certain distance is exceeded and should rise drastically when the robot gets within close proximity of the obstacle. Hence, a common definition is
+\begin{equation}
+U_{rep}(q) = \begin{cases}
+      \frac{1}{2} k_{rep}\cdot (\frac{1}{\rho (q)}-\frac{1}{\rho_0})^2 & \text{if}\ \rho (q) \leq \rho_0 \\
+      0 & \text{if}\ \rho (q) \geq \rho_0 \\
+    \end{cases}
+\end{equation}
+where $k_{rep}$ is the scaling factor, $\rho_0$ is the distance threshold and $\rho (q)$ is the minimal distance from position $q$ to the obstacle.
+
+
+The main limitation to this approach is that it is prone to local minima, where the robot can get stuck. However, we are not working with any goals, but rather with an user input in form of a force so even if the robot is within a local minima, the user can literally pull it away from it. Furthermore, because the output of the potential field method is a force vector, we can elegantly combine it with the admittance controller, which also operates using virtual forces acting on the robot. 
+
+So we can conclude that the potential field method is most suitable for a fusion with an admittance controller and we will elaborate on our implementation in the following.
 
 \chapter{Implementation}
 \begin{figure}

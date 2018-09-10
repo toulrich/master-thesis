@@ -60,132 +60,140 @@
 \@writefile{lot}{\contentsline {table}{\numberline {3.4}{\ignorespaces Robotiq FT 300 Force Torque Sensor Specifications}}{7}{table.3.4}}
 \newlabel{tab:robotiq_ft}{{3.4}{7}{Robotiq FT 300 Force Torque Sensor Specifications}{table.3.4}{}}
 \newlabel{tab:robotiq_ft@cref}{{[table][4][3]3.4}{[1][6][]7}}
+\citation{hogan1985impedance}
+\@writefile{toc}{\contentsline {chapter}{\numberline {4}Admittance Control}{8}{chapter.4}}
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\citation{fiorini1998motion}
+\@writefile{toc}{\contentsline {chapter}{\numberline {5}Obstacle Avoidance}{9}{chapter.5}}
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\@writefile{toc}{\contentsline {section}{\numberline {5.1}Local Planners}{9}{section.5.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.1}Velocity Obstacles}{9}{subsection.5.1.1}}
+\newlabel{eq:vo_condition}{{5.1}{9}{Velocity Obstacles}{equation.5.1.1}{}}
+\newlabel{eq:vo_condition@cref}{{[equation][1][5]5.1}{[1][9][]9}}
 \citation{fox1997dynamic}
-\@writefile{toc}{\contentsline {chapter}{\numberline {4}Obstacle Avoidance}{8}{chapter.4}}
+\citation{siegwart2004autonomous}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.2}Dynamic Window Approach}{10}{subsection.5.1.2}}
+\newlabel{eq:dwa_intersection}{{5.3}{10}{Dynamic Window Approach}{equation.5.1.3}{}}
+\newlabel{eq:dwa_intersection@cref}{{[equation][3][5]5.3}{[1][10][]10}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.3}Potential Fields}{10}{subsection.5.1.3}}
+\newlabel{eq:pot_force}{{5.4}{10}{Potential Fields}{equation.5.1.4}{}}
+\newlabel{eq:pot_force@cref}{{[equation][4][5]5.4}{[1][10][]10}}
+\newlabel{eq:pot_field}{{5.6}{10}{Potential Fields}{equation.5.1.6}{}}
+\newlabel{eq:pot_field@cref}{{[equation][6][5]5.6}{[1][10][]10}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {6}Implementation}{12}{chapter.6}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {4.1}Local Planners}{8}{section.4.1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.1}Velocity Obstacles}{8}{subsection.4.1.1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.2}Dynamic Window Approach}{8}{subsection.4.1.2}}
-\newlabel{eq:dwa_intersection}{{4.1}{9}{Dynamic Window Approach}{equation.4.1.1}{}}
-\newlabel{eq:dwa_intersection@cref}{{[equation][1][4]4.1}{[1][9][]9}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.3}Potential Fields}{9}{subsection.4.1.3}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {5}Admittance Control}{10}{chapter.5}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.1}Admittance Control and Obstacle Avoidance Fusion}{12}{section.6.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.1}Parameters}{12}{subsection.6.1.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.2}Costmap}{12}{subsection.6.1.2}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.2}Inverse Kinematics}{12}{section.6.2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.1}{\ignorespaces Schematic of the controller. Arrows indicate information flow between the subsets of the control architecture.}}{12}{figure.6.1}}
+\newlabel{pics:controller_overview}{{6.1}{12}{Schematic of the controller. Arrows indicate information flow between the subsets of the control architecture}{figure.6.1}{}}
+\newlabel{pics:controller_overview@cref}{{[figure][1][6]6.1}{[1][12][]12}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.2}{\ignorespaces Virtual spring mass damper system with two masses. Dotted arrows represent the path of the base (left) and the arm (right) over time, connected by the spring mass damper system.}}{13}{figure.6.2}}
+\newlabel{pics:admittance_model}{{6.2}{13}{Virtual spring mass damper system with two masses. Dotted arrows represent the path of the base (left) and the arm (right) over time, connected by the spring mass damper system}{figure.6.2}{}}
+\newlabel{pics:admittance_model@cref}{{[figure][2][6]6.2}{[1][12][]13}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.3}{\ignorespaces Costmap captured by the LIDAR during a test. YELLOW: Lethal, TURQUOISE: Inscribed, RED TO BLUE GRADIENT: Proximity to an obstacle, TRANSPARENT: Free space. }}{13}{figure.6.3}}
+\newlabel{pics:costmap}{{6.3}{13}{Costmap captured by the LIDAR during a test. YELLOW: Lethal, TURQUOISE: Inscribed, RED TO BLUE GRADIENT: Proximity to an obstacle, TRANSPARENT: Free space}{figure.6.3}{}}
+\newlabel{pics:costmap@cref}{{[figure][3][6]6.3}{[1][12][]13}}
+\@writefile{lot}{\contentsline {table}{\numberline {6.1}{\ignorespaces Costmap Parameters.}}{14}{table.6.1}}
+\newlabel{tab:costmap_params}{{6.1}{14}{Costmap Parameters}{table.6.1}{}}
+\newlabel{tab:costmap_params@cref}{{[table][1][6]6.1}{[1][12][]14}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {7}Results}{15}{chapter.7}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {chapter}{\numberline {6}Implementation}{11}{chapter.6}}
-\@writefile{lof}{\addvspace {10\p@ }}
-\@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {6.1}Admittance Control and Obstacle Avoidance Fusion}{11}{section.6.1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.1}Parameters}{11}{subsection.6.1.1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.2}Costmap}{11}{subsection.6.1.2}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.2}Inverse Kinematics}{11}{section.6.2}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.1}{\ignorespaces Schematic of the controller. Arrows indicate information flow between the subsets of the control architecture.}}{11}{figure.6.1}}
-\newlabel{pics:controller_overview}{{6.1}{11}{Schematic of the controller. Arrows indicate information flow between the subsets of the control architecture}{figure.6.1}{}}
-\newlabel{pics:controller_overview@cref}{{[figure][1][6]6.1}{[1][11][]11}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.2}{\ignorespaces Virtual spring mass damper system with two masses. Dotted arrows represent the path of the base (left) and the arm (right) over time, connected by the spring mass damper system.}}{12}{figure.6.2}}
-\newlabel{pics:admittance_model}{{6.2}{12}{Virtual spring mass damper system with two masses. Dotted arrows represent the path of the base (left) and the arm (right) over time, connected by the spring mass damper system}{figure.6.2}{}}
-\newlabel{pics:admittance_model@cref}{{[figure][2][6]6.2}{[1][11][]12}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.3}{\ignorespaces Costmap captured by the LIDAR during a test. YELLOW: Lethal, TURQUOISE: Inscribed, RED TO BLUE GRADIENT: Proximity to an obstacle, TRANSPARENT: Free space. }}{12}{figure.6.3}}
-\newlabel{pics:costmap}{{6.3}{12}{Costmap captured by the LIDAR during a test. YELLOW: Lethal, TURQUOISE: Inscribed, RED TO BLUE GRADIENT: Proximity to an obstacle, TRANSPARENT: Free space}{figure.6.3}{}}
-\newlabel{pics:costmap@cref}{{[figure][3][6]6.3}{[1][11][]12}}
-\@writefile{lot}{\contentsline {table}{\numberline {6.1}{\ignorespaces Costmap Parameters.}}{13}{table.6.1}}
-\newlabel{tab:costmap_params}{{6.1}{13}{Costmap Parameters}{table.6.1}{}}
-\newlabel{tab:costmap_params@cref}{{[table][1][6]6.1}{[1][11][]13}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {7}Results}{14}{chapter.7}}
-\@writefile{lof}{\addvspace {10\p@ }}
-\@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {7.1}Admittance Control Performance}{14}{section.7.1}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7.1}{\ignorespaces Velocity Response to Force Excitement in X}}{14}{figure.7.1}}
-\newlabel{pics:test18_x}{{7.1}{14}{Velocity Response to Force Excitement in X}{figure.7.1}{}}
-\newlabel{pics:test18_x@cref}{{[figure][1][7]7.1}{[1][14][]14}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7.2}{\ignorespaces Velocity Response to Force Excitement in Y}}{15}{figure.7.2}}
-\newlabel{pics:test18_y}{{7.2}{15}{Velocity Response to Force Excitement in Y}{figure.7.2}{}}
-\newlabel{pics:test18_y@cref}{{[figure][2][7]7.2}{[1][14][]15}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7.3}{\ignorespaces Velocity Response to Force Excitement in $\theta $}}{15}{figure.7.3}}
-\newlabel{pics:test18_theta}{{7.3}{15}{Velocity Response to Force Excitement in $\theta $}{figure.7.3}{}}
-\newlabel{pics:test18_theta@cref}{{[figure][3][7]7.3}{[1][14][]15}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7.4}{\ignorespaces Velocity response in X axis of the robot to external and obstacle force input while being pulled in a frontal obstacle.}}{15}{figure.7.4}}
-\newlabel{pics:test2}{{7.4}{15}{Velocity response in X axis of the robot to external and obstacle force input while being pulled in a frontal obstacle}{figure.7.4}{}}
-\newlabel{pics:test2@cref}{{[figure][4][7]7.4}{[1][14][]15}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7.5}{\ignorespaces Costmap at \unit  {34}{s} of the frontal test. Dark red indicate the obstacle and the robot base.}}{16}{figure.7.5}}
-\newlabel{pics:test2costmap}{{7.5}{16}{Costmap at \unit {34}{s} of the frontal test. Dark red indicate the obstacle and the robot base}{figure.7.5}{}}
-\newlabel{pics:test2costmap@cref}{{[figure][5][7]7.5}{[1][14][]16}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7.6}{\ignorespaces Setup of the \unit  {2}{m} wide corner scenario.}}{16}{figure.7.6}}
-\newlabel{pics:test16_setup}{{7.6}{16}{Setup of the \unit {2}{m} wide corner scenario}{figure.7.6}{}}
-\newlabel{pics:test16_setup@cref}{{[figure][6][7]7.6}{[1][14][]16}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.1.1}Force Excitement in X}{16}{subsection.7.1.1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.1.2}Force Excitement in Y}{16}{subsection.7.1.2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.1.3}Force Excitement in Theta}{16}{subsection.7.1.3}}
-\@writefile{toc}{\contentsline {section}{\numberline {7.2}Obstacle Avoidance Performance}{16}{section.7.2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.2.1}Frontal Obstacle}{16}{subsection.7.2.1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.2.2}Corridor}{16}{subsection.7.2.2}}
-\@writefile{toc}{\contentsline {section}{\numberline {7.3}Real World Scenarios Performance}{16}{section.7.3}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.3.1}Corner}{16}{subsection.7.3.1}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7.7}{\ignorespaces Velocity response to external and obstacle force input in \unit  {2}{m} wide corner scenario.}}{17}{figure.7.7}}
-\newlabel{pics:test16}{{7.7}{17}{Velocity response to external and obstacle force input in \unit {2}{m} wide corner scenario}{figure.7.7}{}}
-\newlabel{pics:test16@cref}{{[figure][7][7]7.7}{[1][16][]17}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.3.2}Double Slalom}{17}{subsection.7.3.2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.3.3}Triple Slalom}{17}{subsection.7.3.3}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.3.4}Cluttered Space 1}{17}{subsection.7.3.4}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.3.5}Cluttered Space 2}{17}{subsection.7.3.5}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {8}Conclusions}{18}{chapter.8}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.1}Admittance Control Performance}{15}{section.7.1}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7.1}{\ignorespaces Velocity Response to Force Excitement in X}}{15}{figure.7.1}}
+\newlabel{pics:test18_x}{{7.1}{15}{Velocity Response to Force Excitement in X}{figure.7.1}{}}
+\newlabel{pics:test18_x@cref}{{[figure][1][7]7.1}{[1][15][]15}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7.2}{\ignorespaces Velocity Response to Force Excitement in Y}}{16}{figure.7.2}}
+\newlabel{pics:test18_y}{{7.2}{16}{Velocity Response to Force Excitement in Y}{figure.7.2}{}}
+\newlabel{pics:test18_y@cref}{{[figure][2][7]7.2}{[1][15][]16}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7.3}{\ignorespaces Velocity Response to Force Excitement in $\theta $}}{16}{figure.7.3}}
+\newlabel{pics:test18_theta}{{7.3}{16}{Velocity Response to Force Excitement in $\theta $}{figure.7.3}{}}
+\newlabel{pics:test18_theta@cref}{{[figure][3][7]7.3}{[1][15][]16}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7.4}{\ignorespaces Velocity response in X axis of the robot to external and obstacle force input while being pulled in a frontal obstacle.}}{16}{figure.7.4}}
+\newlabel{pics:test2}{{7.4}{16}{Velocity response in X axis of the robot to external and obstacle force input while being pulled in a frontal obstacle}{figure.7.4}{}}
+\newlabel{pics:test2@cref}{{[figure][4][7]7.4}{[1][15][]16}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7.5}{\ignorespaces Costmap at \unit  {34}{s} of the frontal test. Dark red indicate the obstacle and the robot base.}}{17}{figure.7.5}}
+\newlabel{pics:test2costmap}{{7.5}{17}{Costmap at \unit {34}{s} of the frontal test. Dark red indicate the obstacle and the robot base}{figure.7.5}{}}
+\newlabel{pics:test2costmap@cref}{{[figure][5][7]7.5}{[1][15][]17}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7.6}{\ignorespaces Setup of the \unit  {2}{m} wide corner scenario.}}{17}{figure.7.6}}
+\newlabel{pics:test16_setup}{{7.6}{17}{Setup of the \unit {2}{m} wide corner scenario}{figure.7.6}{}}
+\newlabel{pics:test16_setup@cref}{{[figure][6][7]7.6}{[1][15][]17}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.1.1}Force Excitement in X}{17}{subsection.7.1.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.1.2}Force Excitement in Y}{17}{subsection.7.1.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.1.3}Force Excitement in Theta}{17}{subsection.7.1.3}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.2}Obstacle Avoidance Performance}{17}{section.7.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.2.1}Frontal Obstacle}{17}{subsection.7.2.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.2.2}Corridor}{17}{subsection.7.2.2}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.3}Real World Scenarios Performance}{17}{section.7.3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.3.1}Corner}{17}{subsection.7.3.1}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7.7}{\ignorespaces Velocity response to external and obstacle force input in \unit  {2}{m} wide corner scenario.}}{18}{figure.7.7}}
+\newlabel{pics:test16}{{7.7}{18}{Velocity response to external and obstacle force input in \unit {2}{m} wide corner scenario}{figure.7.7}{}}
+\newlabel{pics:test16@cref}{{[figure][7][7]7.7}{[1][17][]18}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.3.2}Double Slalom}{18}{subsection.7.3.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.3.3}Triple Slalom}{18}{subsection.7.3.3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.3.4}Cluttered Space 1}{18}{subsection.7.3.4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.3.5}Cluttered Space 2}{18}{subsection.7.3.5}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {8}Conclusions}{19}{chapter.8}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \citation{Raibert1986LeggedRobotsThatBalance}
 \citation{Raibert1986LeggedRobotsThatBalance,Vukobratovic2004ZeroMomentPoint}
 \citation{Pratt1995SEA}
-\@writefile{toc}{\contentsline {chapter}{\numberline {9}Einige wichtige Hinweise zum Arbeiten mit \LaTeX  \ }{19}{chapter.9}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {9}Einige wichtige Hinweise zum Arbeiten mit \LaTeX  \ }{20}{chapter.9}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{sec:latexumg}{{9}{19}{Einige wichtige Hinweise zum Arbeiten mit \LaTeX \ }{chapter.9}{}}
-\newlabel{sec:latexumg@cref}{{[chapter][9][]9}{[1][19][]19}}
-\@writefile{toc}{\contentsline {section}{\numberline {9.1}Gliederungen}{19}{section.9.1}}
-\newlabel{sec:gliederung}{{9.1}{19}{Gliederungen}{section.9.1}{}}
-\newlabel{sec:gliederung@cref}{{[section][1][9]9.1}{[1][19][]19}}
-\@writefile{toc}{\contentsline {section}{\numberline {9.2}Referenzen und Verweise}{19}{section.9.2}}
-\newlabel{sec:refverw}{{9.2}{19}{Referenzen und Verweise}{section.9.2}{}}
-\newlabel{sec:refverw@cref}{{[section][2][9]9.2}{[1][19][]19}}
-\@writefile{toc}{\contentsline {section}{\numberline {9.3}Aufz\IeC {\"a}hlungen}{19}{section.9.3}}
-\newlabel{sec:aufz}{{9.3}{19}{Aufzählungen}{section.9.3}{}}
-\newlabel{sec:aufz@cref}{{[section][3][9]9.3}{[1][19][]19}}
-\@writefile{toc}{\contentsline {section}{\numberline {9.4}Erstellen einer Tabelle}{20}{section.9.4}}
-\newlabel{sec:tabellen}{{9.4}{20}{Erstellen einer Tabelle}{section.9.4}{}}
-\newlabel{sec:tabellen@cref}{{[section][4][9]9.4}{[1][20][]20}}
-\@writefile{lot}{\contentsline {table}{\numberline {9.1}{\ignorespaces Daten der Fahrzyklen ECE, EUDC, NEFZ.}}{20}{table.9.1}}
-\newlabel{tab:tabnefz}{{9.1}{20}{Daten der Fahrzyklen ECE, EUDC, NEFZ}{table.9.1}{}}
-\newlabel{tab:tabnefz@cref}{{[table][1][9]9.1}{[1][20][]20}}
-\@writefile{lof}{\contentsline {figure}{\numberline {9.1}{\ignorespaces Ein Bild}}{21}{figure.9.1}}
-\newlabel{pics:k_surf}{{9.1}{21}{Ein Bild}{figure.9.1}{}}
-\newlabel{pics:k_surf@cref}{{[figure][1][9]9.1}{[1][21][]21}}
-\@writefile{toc}{\contentsline {section}{\numberline {9.5}Einbinden einer Grafik}{21}{section.9.5}}
-\newlabel{sec:epsgraph}{{9.5}{21}{Einbinden einer Grafik}{section.9.5}{}}
-\newlabel{sec:epsgraph@cref}{{[section][5][9]9.5}{[1][20][]21}}
-\@writefile{toc}{\contentsline {section}{\numberline {9.6}Mathematische Formeln}{21}{section.9.6}}
-\newlabel{sec:math}{{9.6}{21}{Mathematische Formeln}{section.9.6}{}}
-\newlabel{sec:math@cref}{{[section][6][9]9.6}{[1][21][]21}}
-\newlabel{eq:my_equation}{{9.1}{21}{Mathematische Formeln}{equation.9.6.1}{}}
-\newlabel{eq:my_equation@cref}{{[equation][1][9]9.1}{[1][21][]21}}
-\@writefile{lof}{\contentsline {figure}{\numberline {9.2}{\ignorespaces Zwei Bilder nebeneinander}}{22}{figure.9.2}}
-\newlabel{pics:cycle}{{9.2}{22}{Zwei Bilder nebeneinander}{figure.9.2}{}}
-\newlabel{pics:cycle@cref}{{[figure][2][9]9.2}{[1][21][]22}}
-\@writefile{toc}{\contentsline {section}{\numberline {9.7}Weitere n\IeC {\"u}tzliche Befehle}{22}{section.9.7}}
-\newlabel{sec:div}{{9.7}{22}{Weitere nützliche Befehle}{section.9.7}{}}
-\newlabel{sec:div@cref}{{[section][7][9]9.7}{[1][22][]22}}
+\newlabel{sec:latexumg}{{9}{20}{Einige wichtige Hinweise zum Arbeiten mit \LaTeX \ }{chapter.9}{}}
+\newlabel{sec:latexumg@cref}{{[chapter][9][]9}{[1][20][]20}}
+\@writefile{toc}{\contentsline {section}{\numberline {9.1}Gliederungen}{20}{section.9.1}}
+\newlabel{sec:gliederung}{{9.1}{20}{Gliederungen}{section.9.1}{}}
+\newlabel{sec:gliederung@cref}{{[section][1][9]9.1}{[1][20][]20}}
+\@writefile{toc}{\contentsline {section}{\numberline {9.2}Referenzen und Verweise}{20}{section.9.2}}
+\newlabel{sec:refverw}{{9.2}{20}{Referenzen und Verweise}{section.9.2}{}}
+\newlabel{sec:refverw@cref}{{[section][2][9]9.2}{[1][20][]20}}
+\@writefile{toc}{\contentsline {section}{\numberline {9.3}Aufz\IeC {\"a}hlungen}{20}{section.9.3}}
+\newlabel{sec:aufz}{{9.3}{20}{Aufzählungen}{section.9.3}{}}
+\newlabel{sec:aufz@cref}{{[section][3][9]9.3}{[1][20][]20}}
+\@writefile{toc}{\contentsline {section}{\numberline {9.4}Erstellen einer Tabelle}{21}{section.9.4}}
+\newlabel{sec:tabellen}{{9.4}{21}{Erstellen einer Tabelle}{section.9.4}{}}
+\newlabel{sec:tabellen@cref}{{[section][4][9]9.4}{[1][21][]21}}
+\@writefile{lot}{\contentsline {table}{\numberline {9.1}{\ignorespaces Daten der Fahrzyklen ECE, EUDC, NEFZ.}}{21}{table.9.1}}
+\newlabel{tab:tabnefz}{{9.1}{21}{Daten der Fahrzyklen ECE, EUDC, NEFZ}{table.9.1}{}}
+\newlabel{tab:tabnefz@cref}{{[table][1][9]9.1}{[1][21][]21}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9.1}{\ignorespaces Ein Bild}}{22}{figure.9.1}}
+\newlabel{pics:k_surf}{{9.1}{22}{Ein Bild}{figure.9.1}{}}
+\newlabel{pics:k_surf@cref}{{[figure][1][9]9.1}{[1][22][]22}}
+\@writefile{toc}{\contentsline {section}{\numberline {9.5}Einbinden einer Grafik}{22}{section.9.5}}
+\newlabel{sec:epsgraph}{{9.5}{22}{Einbinden einer Grafik}{section.9.5}{}}
+\newlabel{sec:epsgraph@cref}{{[section][5][9]9.5}{[1][21][]22}}
+\@writefile{toc}{\contentsline {section}{\numberline {9.6}Mathematische Formeln}{22}{section.9.6}}
+\newlabel{sec:math}{{9.6}{22}{Mathematische Formeln}{section.9.6}{}}
+\newlabel{sec:math@cref}{{[section][6][9]9.6}{[1][22][]22}}
+\newlabel{eq:my_equation}{{9.1}{22}{Mathematische Formeln}{equation.9.6.1}{}}
+\newlabel{eq:my_equation@cref}{{[equation][1][9]9.1}{[1][22][]22}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9.2}{\ignorespaces Zwei Bilder nebeneinander}}{23}{figure.9.2}}
+\newlabel{pics:cycle}{{9.2}{23}{Zwei Bilder nebeneinander}{figure.9.2}{}}
+\newlabel{pics:cycle@cref}{{[figure][2][9]9.2}{[1][22][]23}}
+\@writefile{toc}{\contentsline {section}{\numberline {9.7}Weitere n\IeC {\"u}tzliche Befehle}{23}{section.9.7}}
+\newlabel{sec:div}{{9.7}{23}{Weitere nützliche Befehle}{section.9.7}{}}
+\newlabel{sec:div@cref}{{[section][7][9]9.7}{[1][23][]23}}
 \bibstyle{bibliography/IEEEtranN}
 \bibdata{bibliography/references}
-\bibcite{fox1997dynamic}{{1}{1997}{{Fox et~al.}}{{Fox, Burgard, and Thrun}}}
-\bibcite{Raibert1986LeggedRobotsThatBalance}{{2}{1986}{{Raibert}}{{}}}
-\bibcite{Vukobratovic2004ZeroMomentPoint}{{3}{2004}{{Vukobratovi\'{c} and Borovac}}{{}}}
-\bibcite{Pratt1995SEA}{{4}{1995}{{Pratt and Williamson}}{{}}}
-\@writefile{toc}{\contentsline {chapter}{Bibliography}{23}{chapter*.12}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {A}Irgendwas}{25}{appendix.A}}
+\bibcite{fiorini1998motion}{{1}{1998}{{Fiorini and Shiller}}{{}}}
+\bibcite{fox1997dynamic}{{2}{1997}{{Fox et~al.}}{{Fox, Burgard, and Thrun}}}
+\bibcite{siegwart2004autonomous}{{3}{2004}{{Siegwart et~al.}}{{Siegwart, Nourbakhsh, and Scaramuzza}}}
+\@writefile{toc}{\contentsline {chapter}{Bibliography}{25}{chapter*.12}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {A}Code}{27}{appendix.A}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{sec:irgendwas}{{A}{25}{Irgendwas}{appendix.A}{}}
-\newlabel{sec:irgendwas@cref}{{[appendix][1][2147483647]A}{[1][25][]25}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {B}Datasheets}{27}{appendix.B}}
+\newlabel{sec:code}{{A}{27}{Code}{appendix.A}{}}
+\newlabel{sec:code@cref}{{[appendix][1][2147483647]A}{[1][27][]27}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {B}Datasheets}{29}{appendix.B}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{sec:datasheets}{{B}{27}{Datasheets}{appendix.B}{}}
-\newlabel{sec:datasheets@cref}{{[appendix][2][2147483647]B}{[1][27][]27}}
+\newlabel{sec:datasheets}{{B}{29}{Datasheets}{appendix.B}{}}
+\newlabel{sec:datasheets@cref}{{[appendix][2][2147483647]B}{[1][29][]29}}

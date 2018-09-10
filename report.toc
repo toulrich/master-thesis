@@ -8,40 +8,40 @@
 \contentsline {section}{\numberline {3.2}Universal Robot 10}{4}{section.3.2}
 \contentsline {section}{\numberline {3.3}Gripper}{6}{section.3.3}
 \contentsline {section}{\numberline {3.4}Force-Torque Sensor}{6}{section.3.4}
-\contentsline {chapter}{\numberline {4}Obstacle Avoidance}{8}{chapter.4}
-\contentsline {section}{\numberline {4.1}Local Planners}{8}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}Velocity Obstacles}{8}{subsection.4.1.1}
-\contentsline {subsection}{\numberline {4.1.2}Dynamic Window Approach}{8}{subsection.4.1.2}
-\contentsline {subsection}{\numberline {4.1.3}Potential Fields}{9}{subsection.4.1.3}
-\contentsline {chapter}{\numberline {5}Admittance Control}{10}{chapter.5}
-\contentsline {chapter}{\numberline {6}Implementation}{11}{chapter.6}
-\contentsline {section}{\numberline {6.1}Admittance Control and Obstacle Avoidance Fusion}{11}{section.6.1}
-\contentsline {subsection}{\numberline {6.1.1}Parameters}{11}{subsection.6.1.1}
-\contentsline {subsection}{\numberline {6.1.2}Costmap}{11}{subsection.6.1.2}
-\contentsline {section}{\numberline {6.2}Inverse Kinematics}{11}{section.6.2}
-\contentsline {chapter}{\numberline {7}Results}{14}{chapter.7}
-\contentsline {section}{\numberline {7.1}Admittance Control Performance}{14}{section.7.1}
-\contentsline {subsection}{\numberline {7.1.1}Force Excitement in X}{16}{subsection.7.1.1}
-\contentsline {subsection}{\numberline {7.1.2}Force Excitement in Y}{16}{subsection.7.1.2}
-\contentsline {subsection}{\numberline {7.1.3}Force Excitement in Theta}{16}{subsection.7.1.3}
-\contentsline {section}{\numberline {7.2}Obstacle Avoidance Performance}{16}{section.7.2}
-\contentsline {subsection}{\numberline {7.2.1}Frontal Obstacle}{16}{subsection.7.2.1}
-\contentsline {subsection}{\numberline {7.2.2}Corridor}{16}{subsection.7.2.2}
-\contentsline {section}{\numberline {7.3}Real World Scenarios Performance}{16}{section.7.3}
-\contentsline {subsection}{\numberline {7.3.1}Corner}{16}{subsection.7.3.1}
-\contentsline {subsection}{\numberline {7.3.2}Double Slalom}{17}{subsection.7.3.2}
-\contentsline {subsection}{\numberline {7.3.3}Triple Slalom}{17}{subsection.7.3.3}
-\contentsline {subsection}{\numberline {7.3.4}Cluttered Space 1}{17}{subsection.7.3.4}
-\contentsline {subsection}{\numberline {7.3.5}Cluttered Space 2}{17}{subsection.7.3.5}
-\contentsline {chapter}{\numberline {8}Conclusions}{18}{chapter.8}
-\contentsline {chapter}{\numberline {9}Einige wichtige Hinweise zum Arbeiten mit \LaTeX \ }{19}{chapter.9}
-\contentsline {section}{\numberline {9.1}Gliederungen}{19}{section.9.1}
-\contentsline {section}{\numberline {9.2}Referenzen und Verweise}{19}{section.9.2}
-\contentsline {section}{\numberline {9.3}Aufz\IeC {\"a}hlungen}{19}{section.9.3}
-\contentsline {section}{\numberline {9.4}Erstellen einer Tabelle}{20}{section.9.4}
-\contentsline {section}{\numberline {9.5}Einbinden einer Grafik}{21}{section.9.5}
-\contentsline {section}{\numberline {9.6}Mathematische Formeln}{21}{section.9.6}
-\contentsline {section}{\numberline {9.7}Weitere n\IeC {\"u}tzliche Befehle}{22}{section.9.7}
-\contentsline {chapter}{Bibliography}{23}{chapter*.12}
-\contentsline {chapter}{\numberline {A}Irgendwas}{25}{appendix.A}
-\contentsline {chapter}{\numberline {B}Datasheets}{27}{appendix.B}
+\contentsline {chapter}{\numberline {4}Admittance Control}{8}{chapter.4}
+\contentsline {chapter}{\numberline {5}Obstacle Avoidance}{9}{chapter.5}
+\contentsline {section}{\numberline {5.1}Local Planners}{9}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Velocity Obstacles}{9}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}Dynamic Window Approach}{10}{subsection.5.1.2}
+\contentsline {subsection}{\numberline {5.1.3}Potential Fields}{10}{subsection.5.1.3}
+\contentsline {chapter}{\numberline {6}Implementation}{12}{chapter.6}
+\contentsline {section}{\numberline {6.1}Admittance Control and Obstacle Avoidance Fusion}{12}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}Parameters}{12}{subsection.6.1.1}
+\contentsline {subsection}{\numberline {6.1.2}Costmap}{12}{subsection.6.1.2}
+\contentsline {section}{\numberline {6.2}Inverse Kinematics}{12}{section.6.2}
+\contentsline {chapter}{\numberline {7}Results}{15}{chapter.7}
+\contentsline {section}{\numberline {7.1}Admittance Control Performance}{15}{section.7.1}
+\contentsline {subsection}{\numberline {7.1.1}Force Excitement in X}{17}{subsection.7.1.1}
+\contentsline {subsection}{\numberline {7.1.2}Force Excitement in Y}{17}{subsection.7.1.2}
+\contentsline {subsection}{\numberline {7.1.3}Force Excitement in Theta}{17}{subsection.7.1.3}
+\contentsline {section}{\numberline {7.2}Obstacle Avoidance Performance}{17}{section.7.2}
+\contentsline {subsection}{\numberline {7.2.1}Frontal Obstacle}{17}{subsection.7.2.1}
+\contentsline {subsection}{\numberline {7.2.2}Corridor}{17}{subsection.7.2.2}
+\contentsline {section}{\numberline {7.3}Real World Scenarios Performance}{17}{section.7.3}
+\contentsline {subsection}{\numberline {7.3.1}Corner}{17}{subsection.7.3.1}
+\contentsline {subsection}{\numberline {7.3.2}Double Slalom}{18}{subsection.7.3.2}
+\contentsline {subsection}{\numberline {7.3.3}Triple Slalom}{18}{subsection.7.3.3}
+\contentsline {subsection}{\numberline {7.3.4}Cluttered Space 1}{18}{subsection.7.3.4}
+\contentsline {subsection}{\numberline {7.3.5}Cluttered Space 2}{18}{subsection.7.3.5}
+\contentsline {chapter}{\numberline {8}Conclusions}{19}{chapter.8}
+\contentsline {chapter}{\numberline {9}Einige wichtige Hinweise zum Arbeiten mit \LaTeX \ }{20}{chapter.9}
+\contentsline {section}{\numberline {9.1}Gliederungen}{20}{section.9.1}
+\contentsline {section}{\numberline {9.2}Referenzen und Verweise}{20}{section.9.2}
+\contentsline {section}{\numberline {9.3}Aufz\IeC {\"a}hlungen}{20}{section.9.3}
+\contentsline {section}{\numberline {9.4}Erstellen einer Tabelle}{21}{section.9.4}
+\contentsline {section}{\numberline {9.5}Einbinden einer Grafik}{22}{section.9.5}
+\contentsline {section}{\numberline {9.6}Mathematische Formeln}{22}{section.9.6}
+\contentsline {section}{\numberline {9.7}Weitere n\IeC {\"u}tzliche Befehle}{23}{section.9.7}
+\contentsline {chapter}{Bibliography}{25}{chapter*.12}
+\contentsline {chapter}{\numberline {A}Code}{27}{appendix.A}
+\contentsline {chapter}{\numberline {B}Datasheets}{29}{appendix.B}

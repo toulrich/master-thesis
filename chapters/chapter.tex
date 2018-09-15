@@ -93,6 +93,7 @@ The UR10 is an collaborative industrial robot arm by Universal Robots. It has si
 \end{table}
 
 \section{Force-Torque Sensor}
+	label{sec:ft300}
 
 \begin{figure}
    \centering
@@ -125,19 +126,47 @@ The UR10 is an collaborative industrial robot arm by Universal Robots. It has si
 
 
 \chapter{Admittance Control}
+	\label{sec_adm_ctrl}
 The term admittance is closely coupled to impedance \citep{hogan1985impedance}.
+
+The interaction between force input and motion output is modeled as a second order spring mass damper system according to Newton's second law of motion, which states that the change in momentum is equal to the sum of all forces acting on our rigid body
+
+\begin{equation}
+M \cdot \ddot{X} = \sum F
+	\label{eq:virt_work}
+\end{equation}
+The forces in the case of a mass spring damper system are
+\begin{equation}
+\sum F = F_D + F_K + F_{ext}
+	\label{eq:f_sum}
+\end{equation}
+which consists of a spring term
+\begin{equation}
+F_K = K \cdot X
+\end{equation}
+with spring constant $K$, a damping term
+\begin{equation}
+F_D = D \cdot \dot{X}
+\end{equation}
+with damping constant $D$ and a term $F_ext$ for external forces acting on the body. Replacing $\sum F$ in Equation \ref{eq:virt_work} with Equation \ref{eq:f_sum} and dividing by $M$ yields the equation for a second order mass spring damper system:
+\begin{equation}
+\ddot{X} = M^{-1}(F_{ext} -D \cdot \dot{X} -K \cdot X)
+	\label{eq:mass_spring_damper_sys}
+\end{equation}
+
+
 
 
 \chapter{Obstacle Avoidance}
 Ever since robots faced the task of autonomous navigation, obstacle avoidance has been a crucial element of it. There are numerous approaches to tackle the problem, varying in degrees of foresight and influence on the path planner.
 
-The problem can be seperated into two categories, path planning on a global scale and on a local scale. The first category bundles algorithms that take a goal position and a current position of a robot and calculate the optimal path (usually the shortest path) in between, given some objective function. Since the distance to the goal is normally greater than the range of any obstacle detection sensor, these algorithms need a full map of the environment. Widely used examples are A*, Djikstra, Bit* and RRT.
+The problem can be seperated into two categories, path planning around obstacles on a global scale and on a local scale. The first category bundles algorithms that take a goal position and a current position of a robot and calculate the optimal path (usually the shortest path) in between, given some objective function and a map. Since the distance to the goal is normally greater than the range of any obstacle detection sensor, these algorithms need a full map of the environment. Widely used examples are A*, Djikstra, Bit* and RRT.
 
 In contrast, path planning on a local scale takes obstacle detection sensor information as an input and outputs commands to a drive unit, that meet the given objective, which is usually to avoid collisions and stay clear of an obstacle by a minimum distance. 
 
 A typical path planning infastructure on a robot consists of both a global and a local planner, where the global planner outputs a path to follow to the local planner, which in terms fuses that path with online obstacle detection sensor information to ensure it is indeed collision free and deviates from it if necessary.
 
-To find the path planning algorithm that best meets our needs, we must first examine what are the given inputs and the desired outputs of our system. As we already elaborated in \cref{sec:introduction}, we are working in a classical master-slave scenario, which means that the robot is trying to achieve the goal of its human counterpart and not its own. This manifests in the planner in such a way, that the input is the force and torque applied by the human and the robot has no global goal pose. Hence, we are inherently bound to iteratively updated goals within close proximity and there is no possibility nor need to apply global path planning techniqes and we focus only on local planners in the remainder of this chapter.
+To find the path planning algorithm that best meets our needs, we must first examine what are the given inputs and the desired outputs of our system. As we already elaborated in \cref{sec:introduction}, we are working in a master-slave scenario, which means that the robot is trying to achieve the goal of its human counterpart and not its own. This manifests in the planner in such a way, that the input is the force and torque applied by the human and the robot has no global goal pose. Hence, we are inherently bound to iteratively updated goals within close proximity and there is no possibility nor need to apply global path planning techniqes and we focus only on local planners in the remainder of this chapter.
 
 \section{Local Planners}
 In this chapter, we discuss a selection of common local planning methods and their feasibility for the task at hand.
@@ -171,7 +200,12 @@ As \cref{eq:dwa_intersection} shows, the intersection of these three sets gives 
 A cost function is then applied to find the $(v,\omega)$ pair, that maximizes the objective within $V_r$. Elements are heading, distance to goal and velocity terms.
 
 \subsection{Potential Fields}
-Potential fields are also a common tool in the mobile robotics field used for path planning. A virtual potential $U(q)$ at position $q = (x,y)$ affects the robot and drives him away from any maximum, like a ball rolling downhill \citep{siegwart2004autonomous}. It can be used to attract the robot to a goal by creating a local minimum and repulsing a robot from an obstacle by creating a local maximum.
+	\label{sec:pot_field}
+Potential fields are also a common tool in the mobile robotics field used for path planning. A virtual potential $U(q)$ at position $q = (x,y)$ affects the robot and drives him away from any maximum, like a ball rolling downhill \citep{siegwart2004autonomous}. It can be used to attract the robot to a goal by creating a local minimum and repulsing a robot from an obstacle by creating a local maximum. The superposition of all attractive and repulsive potential fields yields the overall potential $U(q)$:
+\begin{equation}
+U(q) = U_{attr}(q) + U_{rep}(q)
+	\label{eq:pot_field}
+\end{equation}
 
 If the potential field is differentiable, we find that the resulting virtual force $F(q)$ that acts on the robot in position $q$ is then defined as 
 \begin{equation}
@@ -181,18 +215,13 @@ F(q) = - \nabla U(q)
 where $\nabla U(q)$ is the gradient of the potential field
 \begin{equation}
 \nabla U(q) = \begin{pmatrix}
-\frac{\partial U}{\partial x}
+\frac{\partial U}{\partial x} \\
 \frac{\partial U}{\partial y}
 \end{pmatrix}
+	\label{eq:gradient}
 \end{equation}
 
-
-The overall potential field is the sum of all attractive and repulsive potential fields
-\begin{equation}
-U(q) = U_{attr}(q) + U_{rep}(q)
-	\label{eq:pot_field}
-\end{equation}
-and by combining \ref{eq:pot_force} and \ref{eq:pot_field} we see the virtual force consists of:
+Analoguesly, by combining \ref{eq:pot_force} and \ref{eq:pot_field} we see that the overall force equals the sum of the attractive and repulsive forces:
 \begin{equation}
 \begin{aligned}
 F(q) &= F_{att}(q) + F_{rep}(q) \\
@@ -235,7 +264,8 @@ So we can conclude that the potential field method is most suitable for a fusion
    \label{pics:controller_overview}
 \end{figure}
 
-Flowchart of the whole algorithm comes here
+Having the potential field method selected as the desired obstacle avoidance algorithm, we are able to fuse it together with the admittance controller. Figure \ref{pics:controller_overview} shows the overall controller schematic. Firstly, we explain the functionality of the system on a higher level and dive into the specific controller blocks subsequently. Depicted on the top level are the sensor inputs, which are the readings from the \emph{force-torque sensor} and the \emph{LIDAR}. The force-torque sensor outputs a six-dimensional wrench $F_{ext}$, as described in Chapter \ref{sec:ft300}. The output of the LIDAR are continuous LaserScan ROS messages \citep{rosLaserscan}. Each message contains the range and intensity of every laser measurement, which is fed in the \emph{obstacle avoidance} node. There, a costmap is created, explained in detail in Chapter \ref{sec:costmap}, whose output is a planar two-dimensional wrench $F_{obs}$. We feed these into the \emph{admittance control}, whose other inputs are the vehicle kinematics, namely the current pose $X_{base}$ \citep{rosPose} and twist $\dot{X}_{base}$ \citep{rosTwist} of the ridgeback \emph{mobile base} and the current pose $X_{ee}$ and twist $\dot{X}_{ee}$ of the UR10 \emph{manipulator}. Given these inputs, we calculate the desired twist $\dot{X}_{base_{des}}$ for the mobile base and the desired twist $\dot{X}_{ee_{des}}$ for the manipulator in cartesian space, which in terms needs to be put through the \emph{inverse kinematics} to obtain a feasible velocity $\dot{q}_{ee}$ in joint space for the manipulator.
+
 \section{Admittance Control and Obstacle Avoidance Fusion}
 \begin{figure}
    \centering
@@ -243,11 +273,23 @@ Flowchart of the whole algorithm comes here
    \caption{Virtual spring mass damper system with two masses. Dotted arrows represent the path of the base (left) and the arm (right) over time, connected by the spring mass damper system.}
    \label{pics:admittance_model}
 \end{figure}
+The key element of the whole algorithm is the fusion of the admittance controller, as described in Chapter \ref{sec:adm_ctrl} and the obstacle avoidance, as described in Chapter \ref{sec:pot_field}. Figure \ref{pics:admittance_model} shows the coupling of base and EE.
 
+
+\begin{equation}
+M_{base} \cdot \ddot{X}_{base} = -D_{base} \cdot \dot{X}_{base} - D \cdot \dot{X}_{ee} + K \cdot X_{error}+F_{obs}
+	\label{eq:adm_base}
+\end{equation}
+
+\begin{equation}
+M_{ee} \cdot \ddot{X}_{ee} = -(D + D_{ee}) \cdot \dot{X}_{ee} - K \cdot X_{error}+F_{ext}
+	\label{eq:adm_ee}
+\end{equation}
 
 \subsection{Parameters}
 admittance parameters
 \subsection{Costmap}
+	\label{sec:costmap}
 \begin{figure}
    \centering
    \includegraphics[width=0.75\textwidth]{images/costmap.png}

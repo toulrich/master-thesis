@@ -3,45 +3,37 @@
 \BOOKMARK [0][-]{chapter*.8}{Symbols}{}% 3
 \BOOKMARK [0][-]{chapter.1}{Introduction}{}% 4
 \BOOKMARK [0][-]{chapter.2}{Related Work}{}% 5
-\BOOKMARK [0][-]{chapter.3}{Mobile Manipulator}{}% 6
-\BOOKMARK [1][-]{section.3.1}{Ridgeback}{chapter.3}% 7
+\BOOKMARK [0][-]{chapter.3}{The Thing Mobile Manipulator}{}% 6
+\BOOKMARK [1][-]{section.3.1}{Clearpath Ridgeback}{chapter.3}% 7
 \BOOKMARK [1][-]{section.3.2}{Universal Robot 10}{chapter.3}% 8
-\BOOKMARK [1][-]{section.3.3}{Gripper}{chapter.3}% 9
-\BOOKMARK [1][-]{section.3.4}{Force-Torque Sensor}{chapter.3}% 10
-\BOOKMARK [0][-]{chapter.4}{Admittance Control}{}% 11
-\BOOKMARK [0][-]{chapter.5}{Obstacle Avoidance}{}% 12
-\BOOKMARK [1][-]{section.5.1}{Local Planners}{chapter.5}% 13
-\BOOKMARK [2][-]{subsection.5.1.1}{Velocity Obstacles}{section.5.1}% 14
-\BOOKMARK [2][-]{subsection.5.1.2}{Dynamic Window Approach}{section.5.1}% 15
-\BOOKMARK [2][-]{subsection.5.1.3}{Potential Fields}{section.5.1}% 16
+\BOOKMARK [1][-]{section.3.3}{Robotiq Three Finger Gripper}{chapter.3}% 9
+\BOOKMARK [1][-]{section.3.4}{Robotiq FT 300 Force-Torque Sensor}{chapter.3}% 10
+\BOOKMARK [1][-]{section.3.5}{Hokuyo Laser Range Finder}{chapter.3}% 11
+\BOOKMARK [0][-]{chapter.4}{Admittance Control}{}% 12
+\BOOKMARK [0][-]{chapter.5}{Obstacle Avoidance}{}% 13
+\BOOKMARK [1][-]{section.5.1}{Local Planners}{chapter.5}% 14
+\BOOKMARK [2][-]{subsection.5.1.1}{Dynamic Window Approach}{section.5.1}% 15
+\BOOKMARK [2][-]{subsection.5.1.2}{Potential Fields}{section.5.1}% 16
 \BOOKMARK [0][-]{chapter.6}{Implementation}{}% 17
 \BOOKMARK [1][-]{section.6.1}{Admittance Control and Obstacle Avoidance Fusion}{chapter.6}% 18
-\BOOKMARK [2][-]{subsection.6.1.1}{Parameters}{section.6.1}% 19
-\BOOKMARK [2][-]{subsection.6.1.2}{Costmap}{section.6.1}% 20
-\BOOKMARK [1][-]{section.6.2}{Inverse Kinematics}{chapter.6}% 21
+\BOOKMARK [2][-]{subsection.6.1.1}{Control Parameters}{section.6.1}% 19
+\BOOKMARK [2][-]{subsection.6.1.2}{Costmap of the Obstacle Potential}{section.6.1}% 20
+\BOOKMARK [1][-]{section.6.2}{Task Priority Inverse Kinematics}{chapter.6}% 21
 \BOOKMARK [0][-]{chapter.7}{Results}{}% 22
 \BOOKMARK [1][-]{section.7.1}{Admittance Control Performance}{chapter.7}% 23
-\BOOKMARK [2][-]{subsection.7.1.1}{Force Excitement in X}{section.7.1}% 24
-\BOOKMARK [2][-]{subsection.7.1.2}{Force Excitement in Y}{section.7.1}% 25
-\BOOKMARK [2][-]{subsection.7.1.3}{Force Excitement in Theta}{section.7.1}% 26
-\BOOKMARK [1][-]{section.7.2}{Obstacle Avoidance Performance}{chapter.7}% 27
-\BOOKMARK [2][-]{subsection.7.2.1}{Frontal Obstacle}{section.7.2}% 28
-\BOOKMARK [2][-]{subsection.7.2.2}{Corridor}{section.7.2}% 29
-\BOOKMARK [1][-]{section.7.3}{Real World Scenarios Performance}{chapter.7}% 30
-\BOOKMARK [2][-]{subsection.7.3.1}{Corner}{section.7.3}% 31
-\BOOKMARK [2][-]{subsection.7.3.2}{Double Slalom}{section.7.3}% 32
-\BOOKMARK [2][-]{subsection.7.3.3}{Triple Slalom}{section.7.3}% 33
-\BOOKMARK [2][-]{subsection.7.3.4}{Cluttered Space 1}{section.7.3}% 34
-\BOOKMARK [2][-]{subsection.7.3.5}{Cluttered Space 2}{section.7.3}% 35
-\BOOKMARK [0][-]{chapter.8}{Conclusions}{}% 36
-\BOOKMARK [0][-]{chapter.9}{Einige wichtige Hinweise zum Arbeiten mit LaTeX }{}% 37
-\BOOKMARK [1][-]{section.9.1}{Gliederungen}{chapter.9}% 38
-\BOOKMARK [1][-]{section.9.2}{Referenzen und Verweise}{chapter.9}% 39
-\BOOKMARK [1][-]{section.9.3}{Aufz\344hlungen}{chapter.9}% 40
-\BOOKMARK [1][-]{section.9.4}{Erstellen einer Tabelle}{chapter.9}% 41
-\BOOKMARK [1][-]{section.9.5}{Einbinden einer Grafik}{chapter.9}% 42
-\BOOKMARK [1][-]{section.9.6}{Mathematische Formeln}{chapter.9}% 43
-\BOOKMARK [1][-]{section.9.7}{Weitere n\374tzliche Befehle}{chapter.9}% 44
-\BOOKMARK [0][-]{chapter*.12}{Bibliography}{}% 45
-\BOOKMARK [0][-]{appendix.A}{Code}{}% 46
-\BOOKMARK [0][-]{appendix.B}{Datasheets}{}% 47
+\BOOKMARK [1][-]{section.7.2}{Obstacle Avoidance and Admittance Control Performance}{chapter.7}% 24
+\BOOKMARK [2][-]{subsection.7.2.1}{Frontal Obstacle}{section.7.2}% 25
+\BOOKMARK [2][-]{subsection.7.2.2}{Corner}{section.7.2}% 26
+\BOOKMARK [2][-]{subsection.7.2.3}{Cluttered Space}{section.7.2}% 27
+\BOOKMARK [0][-]{chapter.8}{Conclusion}{}% 28
+\BOOKMARK [0][-]{chapter.9}{Einige wichtige Hinweise zum Arbeiten mit LaTeX }{}% 29
+\BOOKMARK [1][-]{section.9.1}{Gliederungen}{chapter.9}% 30
+\BOOKMARK [1][-]{section.9.2}{Referenzen und Verweise}{chapter.9}% 31
+\BOOKMARK [1][-]{section.9.3}{Aufz\344hlungen}{chapter.9}% 32
+\BOOKMARK [1][-]{section.9.4}{Erstellen einer Tabelle}{chapter.9}% 33
+\BOOKMARK [1][-]{section.9.5}{Einbinden einer Grafik}{chapter.9}% 34
+\BOOKMARK [1][-]{section.9.6}{Mathematische Formeln}{chapter.9}% 35
+\BOOKMARK [1][-]{section.9.7}{Weitere n\374tzliche Befehle}{chapter.9}% 36
+\BOOKMARK [0][-]{chapter*.12}{Bibliography}{}% 37
+\BOOKMARK [0][-]{appendix.A}{Code}{}% 38
+\BOOKMARK [0][-]{appendix.B}{Datasheets}{}% 39

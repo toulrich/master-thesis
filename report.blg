@@ -8,22 +8,6 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: bibliography/references.bib
-"{" immediately follows a field name---line 91 of file bibliography/references.bib
- :   url
- :      {http://wiki.ros.org/costmap_2d},
-I'm skipping whatever remains of this entry
-"{" immediately follows a field name---line 98 of file bibliography/references.bib
- :   url
- :      {http://docs.ros.org/indigo/api/sensor_msgs/html/msg/LaserScan.html},
-I'm skipping whatever remains of this entry
-"{" immediately follows a field name---line 105 of file bibliography/references.bib
- :   url
- :      {http://docs.ros.org/indigo/api/geometry_msgs/html/msg/PoseStamped.html},
-I'm skipping whatever remains of this entry
-"{" immediately follows a field name---line 112 of file bibliography/references.bib
- :   url
- :      {http://docs.ros.org/indigo/api/geometry_msgs/html/msg/TwistStamped.html},
-I'm skipping whatever remains of this entry
 Warning--I didn't find a database entry for "Raibert1986LeggedRobotsThatBalance"
 Warning--I didn't find a database entry for "Vukobratovic2004ZeroMomentPoint"
 Warning--I didn't find a database entry for "Pratt1995SEA"
@@ -36,45 +20,45 @@ Reallocated global_strs (elt_size=20001) to 20 items from 10.
 Reallocated glb_str_end (elt_size=4) to 20 items from 10.
 
 Done.
-You've used 4 entries,
+You've used 23 entries,
             4749 wiz_defined-function locations,
-            968 strings with 8998 characters,
-and the built_in function-call counts, 3590 in all, are:
-= -- 334
-> -- 88
-< -- 30
-+ -- 44
-- -- 18
-* -- 205
-:= -- 583
-add.period$ -- 8
-call.type$ -- 4
-change.case$ -- 8
-chr.to.int$ -- 61
-cite$ -- 4
-duplicate$ -- 236
-empty$ -- 233
-format.name$ -- 27
-if$ -- 777
-int.to.chr$ -- 1
-int.to.str$ -- 5
-missing$ -- 34
-newline$ -- 36
-num.names$ -- 12
-pop$ -- 72
+            1059 strings with 11978 characters,
+and the built_in function-call counts, 16188 in all, are:
+= -- 1485
+> -- 347
+< -- 92
++ -- 199
+- -- 74
+* -- 843
+:= -- 2402
+add.period$ -- 50
+call.type$ -- 23
+change.case$ -- 56
+chr.to.int$ -- 215
+cite$ -- 34
+duplicate$ -- 1160
+empty$ -- 1287
+format.name$ -- 103
+if$ -- 3631
+int.to.chr$ -- 7
+int.to.str$ -- 24
+missing$ -- 191
+newline$ -- 93
+num.names$ -- 36
+pop$ -- 562
 preamble$ -- 1
-purify$ -- 4
+purify$ -- 23
 quote$ -- 2
-skip$ -- 266
+skip$ -- 1195
 stack$ -- 0
-substring$ -- 144
-swap$ -- 182
-text.length$ -- 9
+substring$ -- 572
+swap$ -- 772
+text.length$ -- 22
 text.prefix$ -- 0
 top$ -- 6
-type$ -- 64
+type$ -- 357
 warning$ -- 0
-while$ -- 20
+while$ -- 61
 width$ -- 0
-write$ -- 72
-(There were 4 error messages)
+write$ -- 263
+(There were 3 warnings)

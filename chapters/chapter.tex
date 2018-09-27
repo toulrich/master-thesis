@@ -1,10 +1,21 @@
 \chapter{Related Work}
-homotopy switching model \citep{evrard2009homotopy}, admittance master slave example \citep{tagliabue2017collaborative}.
+There are a lot of fields of human-robot motor interaction, which can come into play when talking about load sharing, because the task consists of numerous subtasks, such as haptic interaction, obstacle avoidance, path planning, effort and load sharing strategies, role distribution, signaling and intent prediction. Accordingly, there is a vast amount of literature available, each tackling individual subtasks.
+
+In \citep{lawitzky2010load}, an asymmetric master-slave cooperation in a load sharing scenario with effort sharing policies is achieved. Using the actuation redundancy, they vary the degree of robot assistance in the direction of the trajectory and show an interdependency of the load sharing strategy and the resulting task performance. The algorithm in action is depicted in Figure \ref{pics:lawitzky2010}.
+
+In \citep{agravante2016human}, an extensive study of human-humanoid carrying and a complete control framework is presented.
+
+Research with role switching has been conducted amongst others in  \citep{evrard2009homotopy}, where a homotopy switching model between the human and the robot partner allows for continuous role switching between leader and follower.
+
+Recent research focusing on the admittance control can be found in \citep{tagliabue2017collaborative}, where two drones cooperate in a fixed master slave scenario and make use exclusively of the haptic interaction information channel.
+
+An example of human motion estimation is given in \citep{thobbi2011using}.
+
 
 \begin{figure}[h]
    \centering
    \includegraphics[width=0.75\textwidth]{images/lawitzky2010.png}
-   \caption{Load sharing example \citep{lawitzky2010load}.}
+   \caption{Effort sharing policies in human-robot cooperative manipulation  \citep{lawitzky2010load}.}
    \label{pics:lawitzky2010}
 \end{figure}
 
@@ -200,40 +211,89 @@ Figure \ref{pics:hokuyo} depicts the Hokuyo UST-10LX scanning laser range finder
 
 \chapter{Admittance Control}
 	\label{sec:adm_ctrl}
-The term admittance is closely coupled to impedance \citep{hogan1985impedance}.
+	
+The term \emph{admittance control} is closely coupled to the term \emph{impedance control} and essentially they refer to two ways of implementing the same control goal. The goal is to model the dynamic coupling between the end-effector and the environment, which is achieved by establishing a dynamic relationship between the position and force of the end-effector \citep{hogan1985impedance}.
 
-The interaction between force input and motion output is modeled as a second order spring mass damper system according to Newton's second law of motion, which states that the change in momentum is equal to the sum of all forces acting on our rigid body
+By definition, an impedance is a physical system, that accepts motion inputs and yields force outputs, whereas a system that accepts force inputs and yields motion outputs is referred to as an admittance \citep{ott2010unified}.
+
+Hence in impedance control, the controller acts as the impedance and the end-effector as the admittance, which leads to a stable dynamic interaction with stiff environments but very often to instability in free space. Alternatively in admittance control, the controller acts as the admittance and the end-effector as the impedance.
+
+Mathematically, the interaction between force input and position output is modelled as a second order spring mass damper system, as depicted in Figure \ref{pics:mass_spring_damper}. According to Newton's second law of motion, the change in momentum is equal to the sum of all forces $F$ acting on our rigid body
 
 \begin{equation}
 M \cdot \ddot{X} = \sum F
 	\label{eq:virt_work}
 \end{equation}
-The forces in the case of a mass spring damper system are
+where $M$ is the mass and $\ddot{X}$ the acceleration of the rigid body.
+
+The forces in the case of the mass spring damper system become apparent if we free-cut our system, as  seen in Figure \ref{pics:mass_spring_damper_freecut}.
 \begin{equation}
 \sum F = F_D + F_K + F_{ext}
 	\label{eq:f_sum}
 \end{equation}
-which consists of a spring term
+Which consists of a spring term with spring constant $K$,
 \begin{equation}
 F_K = K \cdot X
 \end{equation}
-with spring constant $K$, a damping term
+ a damping term with damping constant $D$
 \begin{equation}
 F_D = D \cdot \dot{X}
 \end{equation}
-with damping constant $D$ and a term $F_ext$ for external forces acting on the body. Replacing $\sum F$ in Equation \ref{eq:virt_work} with Equation \ref{eq:f_sum} and dividing by $M$ yields the equation for a second order mass spring damper system:
+ and a term $F_ext$ for external forces acting on the body. Replacing $\sum F$ in Equation \ref{eq:virt_work} with Equation \ref{eq:f_sum} and dividing by $M$ yields the equation for a second order mass spring damper system:
 \begin{equation}
-\ddot{X} = M^{-1}(F_{ext} -D \cdot \dot{X} -K \cdot X)
+M \cdot \ddot{X} = F_{ext} -D \cdot \dot{X} -K \cdot X
 	\label{eq:mass_spring_damper_sys}
 \end{equation}
 
+\begin{figure}
+   \centering
+   \includegraphics[width=0.75\textwidth]{images/mass_spring_damper.pdf}
+   \caption{Second order mass spring damper system.}
+   \label{pics:mass_spring_damper}
+\end{figure}
 
+\begin{figure}
+   \centering
+   \includegraphics[width=0.75\textwidth]{images/mass_spring_damper_freecut.pdf}
+   \caption{Free-cut second order mass spring damper system.}
+   \label{pics:mass_spring_damper_freecut}
+\end{figure}
 
+We can transform Equation \ref{eq:mass_spring_damper_sys} into state-space representation using 
+
+\begin{equation}
+Z = \dot{X}
+\end{equation}
+
+and we get:
+
+\begin{equation}
+M \cdot \dot{Z} = F_{ext} -  D \cdot Z - K \cdot X
+\label{eq:mass_spring_damper_state_space}
+\end{equation}
+
+Written in matrix form, Equation \ref{eq:mass_spring_damper_state_space} becomes
+
+\begin{equation}
+\begin{bmatrix}
+\dot{X} \\
+\dot{Z} \\
+\end{bmatrix} = \begin{bmatrix}
+0 & 1 \\
+- \frac{K}{M} & - \frac{D}{M}\\
+\end{bmatrix} \begin{bmatrix}
+X \\
+Z \\
+\end{bmatrix} + \begin{bmatrix}
+0 \\
+\frac{F_{ext}}{M} 
+\end{bmatrix}
+\end{equation}
 
 \chapter{Obstacle Avoidance}
 Ever since robots faced the task of autonomous navigation, obstacle avoidance has been a crucial element of it. There are numerous approaches to tackle the problem, varying in degrees of foresight and influence on the path planner.
 
-The problem can be seperated into two categories, path planning around obstacles on a global scale and on a local scale. The first category bundles algorithms that take a goal position and a current position of a robot and calculate the optimal path (usually the shortest path) in between, given some objective function and a map. Since the distance to the goal is normally greater than the range of any obstacle detection sensor, these algorithms need a full map of the environment. Widely used examples are A*, Djikstra, Bit* and RRT.
+The problem can be seperated into two categories, path planning around obstacles on a global scale and on a local scale. The first category bundles algorithms that take a goal position and a current position of a robot and calculate the optimal path (usually the shortest path) in between, given some objective function and a map. Since the distance to the goal is normally greater than the range of any obstacle detection sensor, these algorithms need a full map of the environment. Widely used examples are A*, Dijkstra and RRT.
 
 In contrast, path planning on a local scale takes obstacle detection sensor information as an input and outputs commands to a drive unit, that meet the given objective, which is usually to avoid collisions and stay clear of an obstacle by a minimum distance. 
 
@@ -352,7 +412,7 @@ So we can conclude that the potential field method is most suitable for a fusion
 \chapter{Implementation}
 \begin{figure}
    \centering
-   \includegraphics[width=0.75\textwidth]{images/controller_overview.jpg}
+   \includegraphics[width=0.75\textwidth]{images/controller_overview.pdf}
    \caption{Schematic of the controller. Boxes filled in grey are the nodes of the controller and the arrows indicate information flow between the nodes of the control architecture. The top level nodes are the sensor inputs, which are the readings from the \emph{force-torque sensor} and the \emph{LIDAR}. Beneath, we have the nodes which make up the controller, namely the \emph{admittance control}, the \emph{obstacle avoidance} and the \emph{inverse kinematics}. Nodes on the bottom represent the harwarde interfaces for the \emph{mobile base} and the \emph{manipulator}.}
    \label{pics:controller_overview}
 \end{figure}

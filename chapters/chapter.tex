@@ -1,16 +1,15 @@
 \chapter{Related Work}
-There are a lot of fields of human-robot motor interaction, which can come into play when talking about load sharing, because the task consists of numerous subtasks, such as haptic interaction, obstacle avoidance, path planning, effort and load sharing strategies, role distribution, signaling and intent prediction. Accordingly, there is a vast amount of literature available, each tackling individual subtasks.
+There are a lot of fields of human-robot interaction, which can come into play when talking about load sharing, because the task consists of numerous subtasks, such as haptic interaction, obstacle avoidance, path planning, effort and load sharing strategies, role distribution, signaling and intent prediction. Accordingly, there is a vast amount of literature available, each tackling individual subtasks.
 
-In \citep{lawitzky2010load}, an asymmetric master-slave cooperation in a load sharing scenario with effort sharing policies is achieved. Using the actuation redundancy, they vary the degree of robot assistance in the direction of the trajectory and show an interdependency of the load sharing strategy and the resulting task performance. The algorithm in action is depicted in Figure \ref{pics:lawitzky2010}.
+Earlier work on load sharing are done for example by Evrard and Kheddar \citep{evrard2009homotopy} proposing a homotopy switching model between the human and the robot partner, which allows for continuous role switching between leader and follower and therefore enables pro-active behaviour of the robot. Alternatively, Lawitzky \textit{et al.} \citep{lawitzky2010load} demonstrate an asymmetric master-slave cooperation in a load sharing scenario with focus on effort sharing policies. Using the actuation redundancy, they vary the degree of robot assistance in the direction of the trajectory and show an interdependency of the load sharing strategy and the resulting task performance. The algorithm in action is depicted in Figure \ref{pics:lawitzky2010}.
 
-In \citep{agravante2016human}, an extensive study of human-humanoid carrying and a complete control framework is presented.
+An extensive study of human-humanoid carrying and a complete control framework is presented by Agravante \textit{et al.} \citep{agravante2016human}, focusing on controlling the whole-body motion of a humanoid robot by formulating subtasks as constrained optimization problems.
 
-Research with role switching has been conducted amongst others in  \citep{evrard2009homotopy}, where a homotopy switching model between the human and the robot partner allows for continuous role switching between leader and follower.
+Furthermore, human motion prediction has been shown to enable a greater level of collaboration and improved pro-active behaviour by the robot. For instance, Thobbi \textit{et al.} \citep{thobbi2011using} propose and evaluate human motion estimation in a table-lifting task using Kalman filters. Wang \textit{et al.} \citep{wang2013probabilistic} develop an intention driven dynamics model for target prediction and action recognition for playing table tennis. And Petric \textit{et al.} \citep{petrivc2016cooperative} suggest a prediction of human movement based on Fitts' law.
 
-Recent research focusing on the admittance control can be found in \citep{tagliabue2017collaborative}, where two drones cooperate in a fixed master slave scenario and make use exclusively of the haptic interaction information channel.
+Recent research not in HRI, but focusing on admittance control can be found in \citep{tagliabue2017collaborative}, where two drones cooperate in a fixed master slave scenario and make use exclusively of the haptic interaction information channel.
 
-An example of human motion estimation is given in \citep{thobbi2011using}.
-
+Most similar to our approach is the work by Khoramshahi and Billard \citep{khoramshahi2018dynamical}, which was also developed on a mobile manipulator based on a Clearpath Ridgeback. Here, a task-adaption based on human motion recognition is demonstrated in a load sharing scenario. We base parts of our admittance controller implementation on this work, as the objectives are similar and the robot base is the same system, on which we elaborate in the following.
 
 \begin{figure}[h]
    \centering
@@ -29,9 +28,9 @@ We conduct our research on a mobile manipulator, lovingly called the \emph{Thing
    \label{pics:thing}
 \end{figure}
 
-These hardware packages are essentially independent and are interfaced in a central computing unit, located in the ridgeback. The interface is achieved using a Robot Operating System (ROS) server, which also acts as the user interface. It allows for information sharing between the system and access for the user on high and low system levels.
+These hardware packages are essentially independent and are interfaced in a central computing unit, located in the ridgeback. The interface is achieved using a Robot Operating System (\textsc{Ros}) server, which also acts as the user interface. It allows for information sharing between the system and access for the user on high and low system levels.
 
-The rich and easily expandable sensing equipments include wheel odometry, an Inertial Measurement Unit (IMU) and a Hokuyo laser range finder (LIDAR) \citep{hokuyo} in the Ridgeback and a FT 300 force torque sensor \citep{robotiqFT300} in between the gripper and the UR10.
+The rich and easily expandable sensing equipments include wheel odometry, an Inertial Measurement Unit (IMU) and a Hokuyo laser range finder (\textsc{Lidar}) \citep{hokuyo} in the Ridgeback and a FT 300 force torque sensor \citep{robotiqFT300} in between the gripper and the UR10.
 
 The omnidirectional capability together with the modularity of the system and the vast amount of sensor arrays make the Thing mobile manipulator a popular and widely used system for autonomous robotics research.
 
@@ -39,7 +38,7 @@ The whole manipulator is an out of the box system assembled by Clearpath, which 
 
 \section{Clearpath Ridgeback}
 	\label{sec:ridgeback}
-The Ridgeback, depicted in Figure \ref{pics:ridgeback} is an omnidirectional robot platform designed by Clearpath for indoor movement and payload carrying tasks, such as autonomous warehousing for example. It is a fully integrated system with sensors, actuation and control and features a native ROS interface. The wheel odometry provides accurate localization and can be fused with the front facing LIDAR and IMU for obstacle avoidance and SLAM implementations, which are implemented for example in the ROS navigation stack. Optionally, a second rear facing LIDAR can be mounted for full \unit[360]{\textdegree} coverage. Specifications are summarized in Table \ref{tab:ridgeback}.
+The Ridgeback, depicted in Figure \ref{pics:ridgeback} is an omnidirectional robot platform designed by Clearpath for indoor movement and payload carrying tasks, such as autonomous warehousing for example. It is a fully integrated system with sensors, actuation and control and features a native \textsc{Ros} interface. The wheel odometry provides accurate localization and can be fused with the front facing \textsc{Lidar} and IMU for obstacle avoidance and SLAM implementations, which are implemented for example in the \textsc{Ros} navigation stack. Optionally, a second rear facing \textsc{Lidar} can be mounted for full \unit[360]{\textdegree} coverage. Specifications are summarized in Table \ref{tab:ridgeback}.
 
 \begin{figure}[h]
    \centering
@@ -61,10 +60,10 @@ The Ridgeback, depicted in Figure \ref{pics:ridgeback} is an omnidirectional rob
  Maximum payload & \unit[100]{kg}\\
  Maximum velocity & \unitfrac[1.1]{m}{s}\\
  Average power consumption & \unit[800]{W}\\
- Drivers and APIs & ROS \\
+ Drivers and APIs & \textsc{Ros} \\
  Sensors & Wheel odometry\\
  & Inertial measurement unit (IMU) \\
- & Laser range finder LIDAR \\
+ & Laser range finder \textsc{Lidar} \\
  \hline
  \end{tabular}
 \end{center}
@@ -74,10 +73,10 @@ The broad range of sensors, it's flexibility and low drift in odometry makes the
 
 Because the Ridgeback is omnidirectional, it has three degrees of freedom (DOF) and can move instantaneously along the two linear horizontal axes $x$ and $y$, as well as rotate around the vertical axis $z$, which is expressed by the yaw angle $\theta$. 
 
-Additionally, the Ridgeback houses the on-board computer that runs the low-level drivers of all the elements of the manipulator. On top thereof, there is a high-level driver that ensures accord and offers a ROS interface for the user to connect to.
+Additionally, the Ridgeback houses the on-board computer that runs the low-level drivers of all the elements of the manipulator. On top thereof, there is a high-level driver that ensures accord and offers a \textsc{Ros} interface for the user to connect to.
 
 \section{Universal Robot 10}
-The UR10 is a collaborative industrial robot arm by Universal Robots. It has six rotary joints, hence six DOF and can support payloads up to \unit[10]{kg}. Together with it's little brother the UR5, it is widely regarded as the standard manipulator within robotics research. Hence, extensive platform and software integration resources are available and ROS is supported out of the box.
+The UR10 is a collaborative industrial robot arm by Universal Robots. It has six rotary joints, hence six DOF and can support payloads up to \unit[10]{kg}. Together with it's little brother the UR5, it is widely regarded as the standard manipulator within robotics research. Hence, extensive platform and software integration resources are available and \textsc{Ros} is supported out of the box.
 
 As we see in Table \ref{tab:ur10}, the repeatability of \unit[0.1]{mm} allows for repeatedly achieving a pose with high accuracy, which is important for industrial and research applications alike.
 
@@ -178,7 +177,7 @@ The FT-300 allows for any tasks that make use of force feedback or force control
 \end{savenotes}
 
 \section{Hokuyo Laser Range Finder}
-Figure \ref{pics:hokuyo} depicts the Hokuyo UST-10LX scanning laser range finder. It scans a single horizontal plane by spinning around its vertical axis at \unit[2400]{rpm}, which results in a scanning frequency of \unit[40]{Hz}, also shown in Table \ref{tab:hokuyo}. Compared to any LIDAR system that stacks multiple lasers on top of each other, the Hokuyo UST-10LX is in a disadvantage, because it only outputs two-dimensional range measurements and supplies no information along its vertical axis. However, it outperforms many alternatives in terms of size, weight, power consumption, accuracy and measurement frequency, which makes it highly suitable for a mobile platform.
+Figure \ref{pics:hokuyo} depicts the Hokuyo UST-10LX scanning laser range finder. It scans a single horizontal plane by spinning around its vertical axis at \unit[2400]{rpm}, which results in a scanning frequency of \unit[40]{Hz}, also shown in Table \ref{tab:hokuyo}. Compared to any \textsc{Lidar} system that stacks multiple lasers on top of each other, the Hokuyo UST-10LX is in a disadvantage, because it only outputs two-dimensional range measurements and supplies no information along its vertical axis. However, it outperforms many alternatives in terms of size, weight, power consumption, accuracy and measurement frequency, which makes it highly suitable for a mobile platform.
 
 
 \begin{figure}[h]
@@ -212,34 +211,32 @@ Figure \ref{pics:hokuyo} depicts the Hokuyo UST-10LX scanning laser range finder
 \chapter{Admittance Control}
 	\label{sec:adm_ctrl}
 	
-The term \emph{admittance control} is closely coupled to the term \emph{impedance control} and essentially they refer to two ways of implementing the same control goal. The goal is to model the dynamic coupling between the end-effector and the environment, which is achieved by establishing a dynamic relationship between the position and force of the end-effector \citep{hogan1985impedance}.
+The term \emph{admittance control} is closely coupled to the term \emph{impedance control} and essentially they refer to two opposing ways of implementing the same control goal. The goal is to model the dynamic coupling between the end-effector and its environment, which is essential in robotics for environment interaction and object manipulation \citep{hogan1985impedance}.
 
-By definition, an impedance is a physical system, that accepts motion inputs and yields force outputs, whereas a system that accepts force inputs and yields motion outputs is referred to as an admittance \citep{ott2010unified}.
+The coupling is achieved by establishing a dynamic relationship between the position and force of the end-effector. Which we model as a second order spring mass damper system, as depicted in Figure \ref{pics:mass_spring_damper}. For reasons of simplicity, only the one-dimensional case is drawn, however the following derivation scales up to $n$ dimensions and has a physical representation for up to $6$ dimensions.
 
-Hence in impedance control, the controller acts as the impedance and the end-effector as the admittance, which leads to a stable dynamic interaction with stiff environments but very often to instability in free space. Alternatively in admittance control, the controller acts as the admittance and the end-effector as the impedance.
-
-Mathematically, the interaction between force input and position output is modelled as a second order spring mass damper system, as depicted in Figure \ref{pics:mass_spring_damper}. According to Newton's second law of motion, the change in momentum is equal to the sum of all forces $F$ acting on our rigid body
+According to Newton's second law of motion, the change in momentum is equal to the sum of all forces $F \in \mathbb{R}^{n \times 1}$ acting on our rigid body
 
 \begin{equation}
 M \cdot \ddot{X} = \sum F
 	\label{eq:virt_work}
 \end{equation}
-where $M$ is the mass and $\ddot{X}$ the acceleration of the rigid body.
+where $M \in \mathbb{R}^{n \times n}$ is the inertia matrix and $\ddot{X} \in \mathbb{R}^{n \times 1}$ the acceleration of the rigid body.
 
 The forces in the case of the mass spring damper system become apparent if we free-cut our system, as  seen in Figure \ref{pics:mass_spring_damper_freecut}.
 \begin{equation}
 \sum F = F_D + F_K + F_{ext}
 	\label{eq:f_sum}
 \end{equation}
-Which consists of a spring term with spring constant $K$,
+Which consists of a spring term $F_K$ with spring constant $K$,
 \begin{equation}
 F_K = K \cdot X
 \end{equation}
- a damping term with damping constant $D$
+ a damping term $F_D$ with damping constant $D$
 \begin{equation}
 F_D = D \cdot \dot{X}
 \end{equation}
- and a term $F_ext$ for external forces acting on the body. Replacing $\sum F$ in Equation \ref{eq:virt_work} with Equation \ref{eq:f_sum} and dividing by $M$ yields the equation for a second order mass spring damper system:
+ and a term $F_ext$ for external forces acting on the body. Replacing $\sum F$ in Equation \ref{eq:virt_work} with Equation \ref{eq:f_sum} yields the equation for a second order mass spring damper system:
 \begin{equation}
 M \cdot \ddot{X} = F_{ext} -D \cdot \dot{X} -K \cdot X
 	\label{eq:mass_spring_damper_sys}
@@ -248,47 +245,77 @@ M \cdot \ddot{X} = F_{ext} -D \cdot \dot{X} -K \cdot X
 \begin{figure}
    \centering
    \includegraphics[width=0.75\textwidth]{images/mass_spring_damper.pdf}
-   \caption{Second order mass spring damper system.}
+   \caption{Second order mass spring damper system, where a rigid body with mass $M$ is attached through a spring $K$ and a damper $D$.}
    \label{pics:mass_spring_damper}
 \end{figure}
 
 \begin{figure}
    \centering
    \includegraphics[width=0.75\textwidth]{images/mass_spring_damper_freecut.pdf}
-   \caption{Free-cut second order mass spring damper system.}
+   \caption{Free-cut second order mass spring damper system. Forces between the rigid body and the spring and the damper are introduced as $F_K$ and $F_D$ respectively.}
    \label{pics:mass_spring_damper_freecut}
 \end{figure}
+%
+%We can transform Equation \ref{eq:mass_spring_damper_sys} into state-space representation using 
+%
+%\begin{equation}
+%Z = \dot{X}
+%\end{equation}
+%
+%and we get:
+%
+%\begin{equation}
+%M \cdot \dot{Z} = F_{ext} -  D \cdot Z - K \cdot X
+%\label{eq:mass_spring_damper_state_space}
+%\end{equation}
+%
+%Written in matrix form, Equation \ref{eq:mass_spring_damper_state_space} becomes
+%
+%\begin{equation}
+%\begin{bmatrix}
+%\dot{X} \\
+%\dot{Z} \\
+%\end{bmatrix} = \begin{bmatrix}
+%0 & 1 \\
+%- \frac{K}{M} & - \frac{D}{M}\\
+%\end{bmatrix} \begin{bmatrix}
+%X \\
+%Z \\
+%\end{bmatrix} + \begin{bmatrix}
+%0 \\
+%\frac{F_{ext}}{M} 
+%\end{bmatrix}
+%\end{equation}
 
-We can transform Equation \ref{eq:mass_spring_damper_sys} into state-space representation using 
+Through the usage of energy storing elements, such as the mass and the spring, and energy dissipating elements, such as the damper, the model allows for control of the energy exchange during interaction and we can translate force into position and vice versa. 
 
-\begin{equation}
-Z = \dot{X}
-\end{equation}
+Accordingly, the definition of impedance is the ratio of force output to motion input, i.e. a physical system, that accepts motion inputs and 
+yields force outputs\citep{ott2010unified}.
 
-and we get:
+Admittance is then the inverse of impedance, so the ratio of motion output to force input or a physical a system that accepts force inputs and yields motion outputs.
 
-\begin{equation}
-M \cdot \dot{Z} = F_{ext} -  D \cdot Z - K \cdot X
-\label{eq:mass_spring_damper_state_space}
-\end{equation}
+\begin{description}
+\item[Impedance Control] When looking at the coupling, the impedance controller treats the environment as an admittance and the manipulator as an impedance. The schematic is depicted in Figure \ref{pics:impedance_control}, where we see that the controller relates the deviation $X_{err} = X - X_0$ from an equilibrium trajectory $X_0$ to the external force $F_ext$ and outputs the resulting force $F$ to the plant. This leads to a stable dynamic interaction with stiff environments but often to instability in free space.
 
-Written in matrix form, Equation \ref{eq:mass_spring_damper_state_space} becomes
+\item[Admittance Control] On the contrary, the admittance controller treats the environment as an impedance and the manipulator as an admittance, as shown in Figure \ref{pics:admittance_control}. We notice that the controller takes the equilibrium trajectory $X_0$ and the external force $F_{ext}$ as inputs and outputs the desired trajectory $X_{des}$, which satisfies the mass spring damper system to the position controlled plant.
+\end{description}
 
-\begin{equation}
-\begin{bmatrix}
-\dot{X} \\
-\dot{Z} \\
-\end{bmatrix} = \begin{bmatrix}
-0 & 1 \\
-- \frac{K}{M} & - \frac{D}{M}\\
-\end{bmatrix} \begin{bmatrix}
-X \\
-Z \\
-\end{bmatrix} + \begin{bmatrix}
-0 \\
-\frac{F_{ext}}{M} 
-\end{bmatrix}
-\end{equation}
+To summarize, we see that impedance control and admittance control are inverse variations of controlling a dynamic coupling between a manipulator and its environment, using the mass spring damper model. The impedance controller relates a given motion input to a force output to the environment and the admittance controller positions the manipulator given a force input from the environment. Since our system is to follow a trajectory $X_des$ given the force input $F_{ext}$ from the human partner, we are applying the latter and we elaborate on our implementation in Chapter \ref{sec:implementation}.
+
+\begin{figure}
+   \centering
+   \includegraphics[width=0.75\textwidth]{images/impedance_control_schematic.pdf}
+   \caption{Impedance control schematic. Inputs to the controller are the deviation $X_err$ calculated from the equilibrium trajectory $X_0$ and the actual trajectory $X$, and the external force $F_ext$. Output is the force $F$ which the manipulator exerts on its environment.}
+   \label{pics:impedance_control}
+\end{figure}
+
+\begin{figure}
+   \centering
+   \includegraphics[width=0.75\textwidth]{images/admittance_control_schematic.pdf}
+   \caption{Admittance control schematic. The controller outputs a desired trajectory $X_des$ to the position controlled plant, given the equilibrium trajectory $X_0$ and the external force $F$.}
+   \label{pics:admittance_control}
+\end{figure}
+
 
 \chapter{Obstacle Avoidance}
 Ever since robots faced the task of autonomous navigation, obstacle avoidance has been a crucial element of it. There are numerous approaches to tackle the problem, varying in degrees of foresight and influence on the path planner.
@@ -340,6 +367,11 @@ V_r = V_o \cap V_s \cap V_d
 As \cref{eq:dwa_intersection} shows, the intersection of these three sets gives us the resulting window $V_r$ of feasible velocity pairs, that guarantee no collision with an obstacle for the next step.
 
 A cost function is then applied to find the $(v,\omega)$ pair, that maximizes the objective within $V_r$. Elements are heading, distance to goal and velocity terms.
+
+A general downside of the DWA is that the method assumes objects to be static, which can lead to problems in a dynamically changing environment. If we think about an implementation of DWA within the task hand, it means that we need to create a goal velocity pair $(v_{goal},\omega_{goal})$ for the DWA from our external force input $F_{ext}$. Hence, a transformation from force to velocity is needed, which could be achieved through integration. However, there is still the need for tuning, because it is not clear what magnitude of the goal velocity pair $|(v_{goal},\omega_{goal})|$ works best with DWA. Furthermore, The admittance control and the DWA would be organized sequentially in the control architecture, which means that the admittance control solely outputs a goal velocity pair $(v_{goal},\omega_{goal})$ to the DWA and has no knowledge of the actual command velocity being sent to the hardware.
+
+For these reasons, DWA does not meet our requirements for an obstacle avoidance algorithm and we decide against an implementation of DWA.
+
 
 \subsection{Potential Fields}
 	\label{sec:pot_field}
@@ -405,25 +437,26 @@ where $k_{rep}$ is the scaling factor, $\rho_0$ is the distance threshold and $\
    \label{pics:pot_field}
 \end{figure}
 
-The main limitation to this approach is that it is prone to local minima, where the robot can get stuck. However, we are not working with any goals, but rather with an user input in form of a force so even if the robot is within a local minima, the user can literally pull it away from it. Furthermore, because the output of the potential field method is a force vector, we can elegantly combine it with the admittance controller, which also operates using virtual forces acting on the robot. 
+The main limitation to this approach is that it is prone to local minima, where the robot can get stuck. However, we are not working with any global goals, but rather with an user input in form of a force so even if the robot is within a local minima, the user can literally pull it away from it. Furthermore, because the output of the potential field method is a force vector, we can elegantly combine it with the admittance controller, which also operates using virtual forces acting on the robot. 
 
 So we can conclude that the potential field method is most suitable for a fusion with an admittance controller and we will elaborate on our implementation in the following.
 
 \chapter{Implementation}
+\label{sec:implementation}
 \begin{figure}
    \centering
    \includegraphics[width=0.75\textwidth]{images/controller_overview.pdf}
-   \caption{Schematic of the controller. Boxes filled in grey are the nodes of the controller and the arrows indicate information flow between the nodes of the control architecture. The top level nodes are the sensor inputs, which are the readings from the \emph{force-torque sensor} and the \emph{LIDAR}. Beneath, we have the nodes which make up the controller, namely the \emph{admittance control}, the \emph{obstacle avoidance} and the \emph{inverse kinematics}. Nodes on the bottom represent the harwarde interfaces for the \emph{mobile base} and the \emph{manipulator}.}
+   \caption{Schematic of the controller. Boxes filled in grey are the nodes of the controller and the arrows indicate information flow between the nodes of the control architecture. The top level nodes are the sensor inputs, which are the readings from the \emph{force-torque sensor} and the \emph{\textsc{Lidar}}. Beneath, we have the nodes which make up the controller, namely the \emph{admittance control}, the \emph{obstacle avoidance} and the \emph{inverse kinematics}. Nodes on the bottom represent the harwarde interfaces for the \emph{mobile base} and the \emph{manipulator}.}
    \label{pics:controller_overview}
 \end{figure}
 
-Having the potential field method selected as the desired obstacle avoidance algorithm, we can move on to fusing it together with the admittance controller. Figure \ref{pics:controller_overview} shows the overall controller schematic as a flowchart, with the nodes used and their messages exchanged, and Table \ref{tab:controller_nodes} summarizes the individual nodes and their ROS messages used.
+Having the potential field method selected as the desired obstacle avoidance algorithm, we can move on to fusing it together with the admittance controller. Figure \ref{pics:controller_overview} shows the overall controller schematic as a flowchart, with the nodes used and their messages exchanged, and Table \ref{tab:controller_nodes} summarizes the individual nodes and their \textsc{Ros} messages used.
 
 Firstly, we outline the overall functionality of the system by explaining the functionality of all nodes briefly and dive more deeply into nodes of interest subsequently.
 
 \begin{description}
-  \item[Force-torque sensor] The force-torque sensor node continuously outputs the readings from the FT300 (Chapter \ref{sec:ft300}) as a wrench $F_{ext}$ of dimension $\mathbb{R}^{6 \times 1}$. The top three elements are the linear force readings in $[N]$ and the latter the angular torque readings in $[Nm]$. All packed in a ROS message of type \emph{WrenchStamped} \citep{rosWrench} and published at a rate of \unit[100]{Hz}. 
-  \item[LIDAR] The output of the LIDAR node are the scans from the Hokuyo laser range finder. Each \emph{LaserScan} ROS message \citep{rosLaserscan} contains the range and intensity of every laser measurement taken from the minimum to the maximum angle of the sensor.
+  \item[Force-torque sensor] The force-torque sensor node continuously outputs the readings from the FT300 (Chapter \ref{sec:ft300}) as a wrench $F_{ext}$ of dimension $\mathbb{R}^{6 \times 1}$. The top three elements are the linear force readings in $[N]$ and the latter the angular torque readings in $[Nm]$. All packed in a \textsc{Ros} message of type \emph{WrenchStamped} \citep{rosWrench} and published at a rate of \unit[100]{Hz}. 
+  \item[\textsc{Lidar}] The output of the \textsc{Lidar} node are the scans from the Hokuyo laser range finder. Each \emph{LaserScan} \textsc{Ros} message \citep{rosLaserscan} contains the range and intensity of every laser measurement taken from the minimum to the maximum angle of the sensor.
   \item[Obstacle avoidance] Given the laserscan readings, the obstacle avoidance node creates a costmap \citep{rosCostmap} around the mobile manipulator, which is explained in detail in Chapter \ref{sec:costmap}. The costmap is the obstacle potential of all obstacles seen in the laserscans and we derive the resulting force $F_{obs}$ analogously to Equation \ref{eq:pot_force} as
   \begin{equation}
   F_(obs) = - \nabla U_{obs}(q)
@@ -444,9 +477,9 @@ Firstly, we outline the overall functionality of the system by explaining the fu
  \label{tab:controller_nodes}
  \begin{tabular}{l|lccl}
  \hline
-Node & Output & Dimension & Unit & ROS message type \\ \hline \hline
+Node & Output & Dimension & Unit & \textsc{Ros} message type \\ \hline \hline
 Force-torque sensor & $F_{ext}$ & $\mathbb{R}^{6 \times 1}$ & $[N]$ & WrenchStamped \\
-LIDAR & $F_{obs}$ & $\mathbb{R}^{2 \times 1}$ & $[N]$ & WrenchStamped \\
+\textsc{Lidar} & $F_{obs}$ & $\mathbb{R}^{2 \times 1}$ & $[N]$ & WrenchStamped \\
 Admittance control & $\dot{X}_{base},\dot{X}_{ee}$ & $\mathbb{R}^{10 \times 1}$ & $[N]$ & Custom twist message \\
 Inverse kinematics & $\dot{X}_{base_{des}}$ & $\mathbb{R}^{3 \times 1}$  & $[\sfrac{m}{s}]$ & TwistStamped \\
 & $\dot{q}_{ee_{des}}$&$\mathbb{R}^{6 \times 1}$ & $[rad]$ & FollowJointTrajectory\\
@@ -462,6 +495,7 @@ Manipulator & $X_{ee}$ & $\mathbb{R}^{7 \times 1}$ & $[m]$ & PoseStamped \\
 \end{table}
 
 \section{Admittance Control and Obstacle Avoidance Fusion}
+\label{sec:fusion}
 \begin{figure}
    \centering
    \includegraphics[width=0.75\textwidth]{images/admittance_model.jpg}
@@ -499,6 +533,7 @@ X_{error} = \overline{\rm X_{base}X_{ee}} - X_{eq}
 where Equation \ref{eq:adm_base} is the force equilibrium for the Ridgeback and Equation \ref{eq:adm_ee} the force equilibrium for the EE. We can see that through this coupling, any force $F_{ext}$ exerted by the human parter on the EE will also result in a velocity response of the Ridgeback and vice versa will any obstacle force $F_{obs}$ also result in a velocity response of the EE.
 
 \subsection{Control Parameters}
+	\label{sec:params}
 In this chapter, we list and elaborate on the tuned parameters used in Equation \ref{eq:adm_base} and \ref{eq:adm_ee}. Since we are in six dimensional space and we are not interested in having any interdependence between the individual axes, all constants are six dimensional diagonal matrices. Therefore, we guarantee a full decoupling of all axes.
 
 We set the equilibrium pose $X_eq$ of the EE in respect to the frame of the armbase to be offset by \unit[1]{m} in $x$ and \unit[0.5]{m} in $z$. Equation \ref{eq:eq_pose} shows the full pose in $\mathbb{R}^{7 \times 1}$, consisting of a position and a quaternion\footnote{The UR10 base frame is rotated by \unit[180]{$\degree$} around the vertical axis $z$ in respect to the Ridgeback base frame, hence the negative sign in $x$.}.
@@ -544,7 +579,7 @@ N m s
 \end{bmatrix}
 \end{equation}
 
-An important note here is that although Equation \ref{eq:adm_base} is six dimensional, the output sent to the Ridgeback is only three dimensional, as explained in Chapter \ref{sec:ridgeback}. Hence, parameters in linear $z$, angular $x$ and angular $y$, i.e., the third through fifth rows of Equation \ref{eq:M_base} and Equation \ref{eq:D_base} are irrelevant for the performance of the controller.
+An important note here is that although Equation \ref{eq:adm_base} is six dimensional, the output sent to the Ridgeback is only three dimensional, as explained in Chapter \ref{sec:ridgeback}. Hence, parameters in linear $z$, angular $x$ and angular $y$, i.e., the third through fifth rows of Equation \ref{eq:M_base} and Equation \ref{eq:D_base} are irrelevant for the performance of the controller. This also means, that the EE behaves as a single-mass-damper-system along these axes and we have a two-mass-damper-system only along linear $x$, linear $y$ and angular $z$.
 
 \begin{equation}
 M_{base} = \begin{pmatrix}
@@ -614,7 +649,7 @@ N m
 \subsection{Costmap of the Obstacle Potential}
 	\label{sec:costmap}
 	
-Using the ROS costmap package \citep{rosCostmap}, this node builds a two dimensional occupancy grid based on the incoming laserscans and inflates the cost according to user specified parameters. Table \ref{tab:costmap_params} lists all parameters and their set values. Since we do only local planning, a local costmap, meaning the center of the costmap is equal to the center of the robot, of size \unit[3 $\times$ 3]{m} suffices.
+Using the \textsc{Ros} costmap package \citep{rosCostmap}, this node builds a two dimensional occupancy grid based on the incoming laserscans and inflates the cost according to user specified parameters. Table \ref{tab:costmap_params} lists all parameters and their set values. Since we do only local planning, a local costmap, meaning the center of the costmap is equal to the center of the robot, of size \unit[3 $\times$ 3]{m} suffices.
 
 The algorithm assigns a value from 0 to 100 to every cell of the occupancy grid, which represents the cost $c$ of that cell. We can distinguish four types of cells:
 
@@ -724,42 +759,44 @@ where $\mathbb{I}$ denotes the identity matrix.
 Since an accurate execution of the desired Ridgeback velocity $\dot{X}_{base_{des}}$ is crucial to ensure a successful obstacle avoidance, we choose $\dot{X}_{base_{des}}$ to be our primary task and $\dot{X}_{ee_{des}}$ our secondary.
 
 \chapter{Results}
-We test our previously elaborated implementation on the Thing and list the performed tests and their results in this chapter. Figure \ref{pics:test_setup} depicts the test setup of the Thing gripping the object to be jointly carried. The object is made from wood and \unit[91.44]{cm} in length. Furthermore, we have all low level controllers running on the computer embedded in the Ridgeback and the admittance control and obstacle avoidance running on a laptop, connected through Ethernet.
+We test our previously elaborated implementation on the Thing and list the performed tests and their results in this chapter. Figure \ref{pics:test_setup} depicts the test set-up of the Thing gripping the object to be jointly carried. The object is made from wood and three feet or \unit[91.44]{cm} in length. Furthermore, we have all low level controllers running on the computer embedded in the Ridgeback and the admittance control and obstacle avoidance running on a laptop, connected through Ethernet.
 
 
 \begin{figure}[h]
    \centering
    \includegraphics[width=0.75\textwidth]{images/test_setup.jpg}
-   \caption{The Thing holding the jointly carried object used in the tests. It is a wooden structure \unit[3]{feet} or \unit[91.44]{cm} in length and equipped with a handle to facilitate gripping.}
+   \caption{The Thing holding the jointly carried object used in the tests. It is a wooden structure three feet or \unit[91.44]{cm} in length and equipped with a handle to facilitate gripping.}
    \label{pics:test_setup}
 \end{figure}
 
 \section{Admittance Control Performance}
 	\label{sec:adm_ctrl_performance}
-As initial tests, we analyse the behaviour of the admittance controller in isolation. For this, we place the Thing in free space with no obstacles, i.e., in a region with zero gradient and excite three axes separately by applying force and torque on the object. The three axes are linear $x$, linear $y$ and angular $z$, i.e., the three DOF of the Ridgeback. Therefore, we see a response of both the base and the end-effector in all three tests.
+As initial tests, we analyse the behaviour of the admittance controller in isolation. For this, we place the Thing in free space with no obstacles, i.e., in a region with zero gradient, so that the obstacle force $F_{obs} = 0$.
 
-Figure \ref{pics:test18_x} depicts the velocity response of the system to a force excitement in $x$, Figure \ref{pics:test18_y} the response to a force excitement in $y$ and Figure \ref{pics:test18_theta} around $z$, i.e., the angular velocity $\theta$ given a torque input around $z$.
+As seen in Chapter \ref{sec:params}, all six axes of our admittance controller are fully decoupled, therefore we can analyse the full behaviour of the admittance controller in the direction of an individual axis by applying force or torque on the object along the selected axis. We are most interested in the axes of the two-mass-damper-system, i.e., the three axes that are within the DOF of the Ridgeback, so see a response in both the Ridgeback and the EE. The three axes are linear $x$, linear $y$ and angular $z$ of the local base frame, where $x$ is pointing forward, $y$ to the right and $z$ upwards.
 
 \begin{figure}
    \centering
    \includegraphics[width=0.75\textwidth]{images/test18_x.jpg}
-   \caption{Velocity Response to Force Excitement in $x$}
+   \caption{Velocity response of both the base and the EE to force excitement in $x$.}
    \label{pics:test18_x}
 \end{figure}
 
 \begin{figure}
    \centering
    \includegraphics[width=0.75\textwidth]{images/test18_y.jpg}
-   \caption{Velocity Response to Force Excitement in $y$}
+   \caption{Velocity response of both the base and the EE to force excitement in $y$.}
    \label{pics:test18_y}
 \end{figure}
 
 \begin{figure}
    \centering
    \includegraphics[width=0.75\textwidth]{images/test18_theta.jpg}
-   \caption{Velocity Response to Torque Excitement around $z$}
+   \caption{Velocity response  of both the base and the EE to torque excitement around $z$.}
    \label{pics:test18_theta}
 \end{figure}
+
+Figure \ref{pics:test18_x} depicts the velocity response of the system to a force excitement in $x$, Figure \ref{pics:test18_y} the response to a force excitement in $y$ and Figure \ref{pics:test18_theta} around $z$, i.e., the angular velocity $\theta$ given a torque input around $z$.
 
 If we look at the response of the EE in both $x$, $y$ and $\theta$, we notice that it has a under-critically damped controller, which leads to a quick rise time and overshooting in the opposite direction, as soon as no more force is applied. This behaviour is actually desired, since we want to counteract sudden movement and jerky input by the human partner with the EE and only output smooth behaviour to the Ridgeback. If we have a look at the velocity response in $x$, $y$ and $\theta$ of the latter, we see a vastly slower rise time and no overshooting, i.e., a critically damped controller.
 
@@ -768,7 +805,7 @@ Furthermore, we notice that the linear velocity response of the EE peaks at \uni
 \section{Obstacle Avoidance and Admittance Control Performance}
 Having the admittance controller tuned and working as desired, we can move on to testing the full algorithm where obstacle avoidance comes into play. We use cardboard boxes of dimension \unit[14 $\times$ 14 $\times$ 60]{inches} as obstacles, so that in case of a failure of the controller and an occurrence of a crash, the Thing does not get damaged.
 
-Because we have no \unit[360]{\degree} \textsf{Lidar} coverage, but only a front-facing field of view, we can test the obstacle avoidance in forward and sideways motion of the Thing only. However, we've seen in Chapter \ref{sec:adm_ctrl_performance}, that the response to the admittance controller is independent of direction. Hence, we can assume that the full algorithm is scalable to a backward motion as well, if a back-facing \textsf{Lidar} were to be mounted.
+Because we have no \unit[360]{\degree} \textsc{Lidar} coverage, but only a front-facing field of view, we can test the obstacle avoidance in forward and sideways motion of the Thing only. However, we've seen in Chapter \ref{sec:adm_ctrl_performance}, that the response to the admittance controller is independent of direction. Hence, we can assume that the full algorithm is scalable to a backward motion as well, if a back-facing \textsc{Lidar} were to be mounted.
 
 \subsection{Frontal Obstacle}
 The first obstacle avoidance test is the robot being pulled into a obstacle directly ahead of him. The scenario is depicted in Figure \ref{pics:test2_setup}. The velocity response of the system in the direction of pull, which is $x$, is plotted in Figure \ref{pics:test2}.
@@ -776,25 +813,25 @@ The first obstacle avoidance test is the robot being pulled into a obstacle dire
 \begin{figure}[h]
    \centering
    \includegraphics[width=0.75\textwidth]{images/test2_setup.jpg}
-   \caption{Set up of the frontal obstacle test scenario.}
+   \caption{Set-up of the frontal obstacle test scenario.}
    \label{pics:test2_setup}
 \end{figure}
 
-We see that the velocity responses of both EE and Ridgeback are constant, if a constant force is applied by the human partner and no obstacle is in range. However, as soon as we close in on the obstacle, the obstacle force pointing away from the obstacle rises and gradually diminishes the velocity respones to zero, although there is still a constant external force applied.
+We see that the velocity responses of both EE and Ridgeback are constant, if a constant force is applied by the human partner and no obstacle is in range. However, as soon as we close in on the obstacle, the obstacle force pointing away from the obstacle rises and gradually diminishes the velocity responses to zero, although there is still a constant external force applied.
 
 Figure \ref{pics:test2_costmap} depicts the cost map of the algorithm at the end of the experiment, i.e., at the robots closest position to the obstacle. We see the robot comes no closer than four grid cells to the obstacle, which equals a minimum obstacle clearance of \unit[12]{cm}. Together with the width of the Ridgeback of \unit[0.8]{m}, the lower bound on a narrow passage is thus slightly above\unit[1]{m}.
 
 \begin{figure}
    \centering
    \includegraphics[width=0.75\textwidth]{images/test2.jpg}
-   \caption{Velocity response in X axis of the robot to external and obstacle force input while being pulled in a frontal obstacle.}
+   \caption{Velocity response of both the base (\textsc{Black}) and the EE (\textsc{Black, dotted}) along the $x$ axis of the robot to external force $F_{ext}$ (\textsc{Red}) and obstacle force $F_{obs}$ (\textsc{Blue}) input while being pulled into a frontal obstacle.}
    \label{pics:test2}
 \end{figure}
 
 \begin{figure}
    \centering
    \includegraphics[width=0.75\textwidth]{images/test2_costmap.jpg}
-   \caption{Costmap at \unit{34}{s} of the frontal test. Dark red indicate the obstacle and the robot base.}
+   \caption{Costmap at $t=34s$ of the frontal test. The range of the costmap is $[0,100]$, as explained in Chapter \ref{sec:costmap}, however we set the values of cells occupied by the robot base and by the obstacle ($c = 100$) to $c = 120$ for better readability (\textsc{Dark Red}).}
    \label{pics:test2_costmap}
 \end{figure}
 
@@ -804,7 +841,7 @@ In this experiment, we asses the performance of the algorithm in a corridor with
 \begin{figure}[h]
    \centering
    \includegraphics[width=0.75\textwidth]{images/test16_setup2.jpg}
-   \caption{Setup of the \unit{2}{m} wide corner scenario.}
+   \caption{Set-up of the \unit{2}{m} wide corner scenario.}
    \label{pics:test16_setup}
 \end{figure}
 
@@ -812,13 +849,15 @@ As we can see in Figure \ref{pics:test16}, there is a peak in the negative $y$ d
 
 \begin{figure}
    \centering
-   \includegraphics[width=0.75\textwidth]{images/test16.jpg}
-   \caption{Velocity response to external and obstacle force input in \unit{2}{m} wide corner scenario.}
+   \includegraphics[width=0.9\textwidth]{images/test16.jpg}
+   \caption{Velocity response of both the base (\textsc{Black}) and the EE (\textsc{Black, dotted}) to external $F_{ext }$ (\textsc{Red}) and obstacle force $F_{obs}$ (\textsc{Blue}) input in \unit{2}{m} wide corner scenario. \textsc{Top} depicts the response along the $x$ axis and \textsc{Bottom} the response along the $y$ axis.}
    \label{pics:test16}
 \end{figure}
 
 \subsection{Cluttered Space}
 As a final experiment, we test the behaviour in a cluttered environment, as seen in Figure \ref{pics:test16_setup}. It consists of four boxes in a perpendicular arrangement with the last two boxes forming a passage of \unit[120]{cm} width.
+
+In Figure \ref{pics:test15}, we notice the first box to which the Thing gets close as a repulsive force at $t = 26s$, which leads to a deviation in negative $y$ of the base from the path defined by $F_{ext}$. And when passing through the narrow passage at $t = 95s$, we see a slight oscillation in $F_{obs}$ in $y$, because the base is coming close to an obstacle on either side and needs to settle down on the best gradient centreline in between.
 \begin{figure}
    \centering
    \includegraphics[width=0.75\textwidth]{images/test15_setup.png}
@@ -829,11 +868,20 @@ As a final experiment, we test the behaviour in a cluttered environment, as seen
 \begin{figure}
    \centering
    \includegraphics[width=0.75\textwidth]{images/test15_response.jpg}
-   \caption{Velocity response to external and obstacle force input in the cluttered environment scenario.}
+   \caption{Velocity response of both the base (\textsc{Black}) and the EE (\textsc{Black, dotted}) to external $F_{ext }$ (\textsc{Red}) and obstacle force $F_{obs}$ (\textsc{Blue}) input in \unit{2}{m} cluttered environment scenario. \textsc{Top} depicts the response along the $x$ axis and \textsc{Bottom} the response along the $y$ axis.}
    \label{pics:test15}
 \end{figure}
 
-\chapter{Conclusion}
+\chapter{Discussion}
+In this work, we successfully demonstrate a load sharing algorithm that utilizes an admittance controller and an obstacle avoidance algorithm for a mobile manipulator in collaboration with a human partner. Through usage of the potential field method for obstacle avoidance, we achieve a unified controller that incorporates both the input of the human as an attractive external force and the input of the obstacle avoidance as a repulsive force into the two-mass-spring-damper-system which is the core of the algorithm.
+
+As the experimental results show, the robot demonstrates a pro-active behaviour, both in scenarios with one obstacle and environments that are cluttered. The robot guides the human partner away from detected obstacles and guarantees no collision, independent of the human input. Furthermore, we achieve a smooth and intuitive motion cooperation, which can be greatly adapted and personalized through tuning of the damping and the spring parameters.
+
+Simultaneously, the data from the experiments also shows the limitations of the system. For one, because there is only a front facing \textsc{Lidar}, the Ridgeback can only evade obstacles in forward and sideways motion, which can be easily overcome with additional hardware. A more fundamental limitation of the obstacle avoidance is the fact that the potential field method does not propose a direction of motion, if the external force $F_{ext}$ of the human is parallel to the local gradient. In that case, the resulting velocity is only increased or decreased, but does not change direction. Hence, in a scenario where an obstacle is encountered with a face perpendicular to the direction of the external force, the human partner has to give additional force input to overcome said obstacle. Here, a path planning or intent recognition based on the position of the human partner, as seen by the \textsc{Lidar}, could be an improvement to the system.
+
+Also, the width of the most narrow passage through which the robot can travel could be decreased by alteration of the potential field cost function. This is because the width is currently limited by a static oscillation perpendicular to the direction of travel, that the robot exhibits when passing a narrow corridor. The oscillation is caused by the superposition of the cost of both obstacles, which leads to a discontinuous total cost. Smoothing of the total cost can be considered to minimize this oscillation.
+
+Lastly, the maximal achieved velocity is no more than \unitfrac[0.3]{m}{s} for the robot base, which is to be improved before this system can be applied in a real-world scenario, e.g. a factory.
 
 \chapter{Einige wichtige Hinweise zum Arbeiten mit \LaTeX\ }
 \label{sec:latexumg}

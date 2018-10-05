@@ -18,47 +18,48 @@ Warning--I didn't find a database entry for "Pratt1995SEA"
 Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
 Reallocated global_strs (elt_size=20001) to 20 items from 10.
 Reallocated glb_str_end (elt_size=4) to 20 items from 10.
+Warning--empty journal in agravante2016human
 
 Done.
-You've used 23 entries,
+You've used 29 entries,
             4749 wiz_defined-function locations,
-            1059 strings with 11978 characters,
-and the built_in function-call counts, 16188 in all, are:
-= -- 1485
-> -- 347
-< -- 92
-+ -- 199
-- -- 74
-* -- 843
-:= -- 2402
-add.period$ -- 50
-call.type$ -- 23
-change.case$ -- 56
-chr.to.int$ -- 215
-cite$ -- 34
-duplicate$ -- 1160
-empty$ -- 1287
-format.name$ -- 103
-if$ -- 3631
+            1093 strings with 13255 characters,
+and the built_in function-call counts, 22237 in all, are:
+= -- 1995
+> -- 558
+< -- 139
++ -- 303
+- -- 120
+* -- 1174
+:= -- 3272
+add.period$ -- 65
+call.type$ -- 29
+change.case$ -- 68
+chr.to.int$ -- 338
+cite$ -- 41
+duplicate$ -- 1550
+empty$ -- 1734
+format.name$ -- 163
+if$ -- 5006
 int.to.chr$ -- 7
-int.to.str$ -- 24
-missing$ -- 191
-newline$ -- 93
-num.names$ -- 36
-pop$ -- 562
+int.to.str$ -- 30
+missing$ -- 251
+newline$ -- 111
+num.names$ -- 54
+pop$ -- 726
 preamble$ -- 1
-purify$ -- 23
+purify$ -- 29
 quote$ -- 2
-skip$ -- 1195
+skip$ -- 1630
 stack$ -- 0
-substring$ -- 572
-swap$ -- 772
-text.length$ -- 22
+substring$ -- 862
+swap$ -- 1068
+text.length$ -- 29
 text.prefix$ -- 0
 top$ -- 6
-type$ -- 357
-warning$ -- 0
-while$ -- 61
+type$ -- 453
+warning$ -- 1
+while$ -- 93
 width$ -- 0
-write$ -- 263
-(There were 3 warnings)
+write$ -- 329
+(There were 4 warnings)

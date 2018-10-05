@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.8.29)  27 SEP 2018 01:04
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.8.29)  5 OCT 2018 20:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1479,55 +1479,66 @@ l.91 \cleardoublepage
                       [2] (./chapters/chapter.tex
 Chapter 2.
 
-Package natbib Warning: Citation `agravante2016human' on page 3 undefined on in
-put line 6.
+Package natbib Warning: Citation `wang2013probabilistic' on page 3 undefined on
+ input line 8.
 
-<images/lawitzky2010.png, id=322, 609.27625pt x 412.03937pt>
+
+Package natbib Warning: Citation `petrivc2016cooperative' on page 3 undefined o
+n input line 8.
+
+
+Package natbib Warning: Citation `khoramshahi2018dynamical' on page 3 undefined
+ on input line 12.
+
+<images/lawitzky2010.png, id=324, 609.27625pt x 412.03937pt>
 File: images/lawitzky2010.png Graphic file (type png)
 <use images/lawitzky2010.png>
-Package pdftex.def Info: images/lawitzky2010.png  used on input line 14.
+Package pdftex.def Info: images/lawitzky2010.png  used on input line 16.
 (pdftex.def)             Requested size: 271.01248pt x 183.28464pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 [3
 
 
- <./images/lawitzky2010.png>]
+] [4 <./images/lawitzky2010.png>]
 Chapter 3.
-<images/thing.jpg, id=339, 4625.28pt x 3083.52pt>
+<images/thing.jpg, id=347, 4625.28pt x 3083.52pt>
 File: images/thing.jpg Graphic file (type jpg)
 <use images/thing.jpg>
-Package pdftex.def Info: images/thing.jpg  used on input line 24.
+Package pdftex.def Info: images/thing.jpg  used on input line 26.
 (pdftex.def)             Requested size: 271.01248pt x 180.67456pt.
-[4
+[5
 
  <./images/thing.jpg>]
-<images/ridgeback.png, id=354, 1606.0pt x 1204.5pt>
+<images/ridgeback.png, id=363, 1606.0pt x 1204.5pt>
 File: images/ridgeback.png Graphic file (type png)
 <use images/ridgeback.png>
-Package pdftex.def Info: images/ridgeback.png  used on input line 43.
+Package pdftex.def Info: images/ridgeback.png  used on input line 45.
 (pdftex.def)             Requested size: 271.01248pt x 203.2552pt.
- [5 <./images/ridgeback.png>]
-<images/ur10.png, id=364, 1254.6875pt x 1107.13625pt>
+ [6 <./images/ridgeback.png>]
+<images/ur10.png, id=373, 1254.6875pt x 1107.13625pt>
 File: images/ur10.png Graphic file (type png)
 <use images/ur10.png>
-Package pdftex.def Info: images/ur10.png  used on input line 83.
+Package pdftex.def Info: images/ur10.png  used on input line 85.
 (pdftex.def)             Requested size: 271.01248pt x 239.14462pt.
- [6 <./images/ur10.png>]
-<images/robotiq_gripper.jpg, id=374, 963.6pt x 617.30624pt>
+ [7 <./images/ur10.png>]
+<images/robotiq_gripper.jpg, id=384, 963.6pt x 617.30624pt>
 File: images/robotiq_gripper.jpg Graphic file (type jpg)
 <use images/robotiq_gripper.jpg>
-Package pdftex.def Info: images/robotiq_gripper.jpg  used on input line 111.
+Package pdftex.def Info: images/robotiq_gripper.jpg  used on input line 113.
 (pdftex.def)             Requested size: 271.01248pt x 173.61694pt.
 
-[7 <./images/robotiq_gripper.jpg>]
-<images/robotiq_ft.jpg, id=386, 963.6pt x 617.30624pt>
+[8 <./images/robotiq_gripper.jpg>]
+<images/robotiq_ft.jpg, id=395, 963.6pt x 617.30624pt>
 File: images/robotiq_ft.jpg Graphic file (type jpg)
 <use images/robotiq_ft.jpg>
-Package pdftex.def Info: images/robotiq_ft.jpg  used on input line 148.
+Package pdftex.def Info: images/robotiq_ft.jpg  used on input line 150.
 (pdftex.def)             Requested size: 271.01248pt x 173.61694pt.
-<images/hokuyo.jpg, id=390, 602.25pt x 499.8675pt>
+<images/hokuyo.jpg, id=399, 602.25pt x 499.8675pt>
 File: images/hokuyo.jpg Graphic file (type jpg)
 <use images/hokuyo.jpg>
-Package pdftex.def Info: images/hokuyo.jpg  used on input line 183.
+Package pdftex.def Info: images/hokuyo.jpg  used on input line 185.
 (pdftex.def)             Requested size: 271.01248pt x 224.94592pt.
 
 
@@ -1536,223 +1547,250 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[8 <./images/robotiq_ft.jpg>] [9 <./images/hokuyo.jpg>]
+[9 <./images/robotiq_ft.jpg>] [10 <./images/hokuyo.jpg>]
 Chapter 4.
-
-Package natbib Warning: Citation `ott2010unified' on page 10 undefined on input
- line 214.
-
-<images/mass_spring_damper.pdf, id=408, 241.90375pt x 126.4725pt>
+<images/mass_spring_damper.pdf, id=417, 241.90375pt x 126.4725pt>
 File: images/mass_spring_damper.pdf Graphic file (type pdf)
 <use images/mass_spring_damper.pdf>
 Package pdftex.def Info: images/mass_spring_damper.pdf  used on input line 247.
 
 (pdftex.def)             Requested size: 271.01248pt x 141.70612pt.
-<images/mass_spring_damper_freecut.pdf, id=409, 328.22626pt x 126.4725pt>
+<images/mass_spring_damper_freecut.pdf, id=418, 328.22626pt x 126.4725pt>
 File: images/mass_spring_damper_freecut.pdf Graphic file (type pdf)
 <use images/mass_spring_damper_freecut.pdf>
 Package pdftex.def Info: images/mass_spring_damper_freecut.pdf  used on input l
 ine 254.
 (pdftex.def)             Requested size: 271.01248pt x 104.42793pt.
-[10
 
-] [11 <./images/mass_spring_damper.pdf> <./images/mass_spring_damper_freecut.pd
+Overfull \hbox (1.67847pt too wide) in paragraph at lines 298--299
+\OT1/cmr/m/n/10 treats the en-vi-ron-ment as an ad-mit-tance and the ma-nip-u-l
+a-tor as an impedance.
+ []
+
+[11
+
+] [12 <./images/mass_spring_damper.pdf> <./images/mass_spring_damper_freecut.pd
 f>]
+<images/impedance_control_schematic.pdf, id=685, 600.2425pt x 151.56625pt>
+File: images/impedance_control_schematic.pdf Graphic file (type pdf)
+<use images/impedance_control_schematic.pdf>
+Package pdftex.def Info: images/impedance_control_schematic.pdf  used on input 
+line 307.
+(pdftex.def)             Requested size: 271.01248pt x 68.43544pt.
+<images/admittance_control_schematic.pdf, id=686, 600.2425pt x 158.5925pt>
+File: images/admittance_control_schematic.pdf Graphic file (type pdf)
+<use images/admittance_control_schematic.pdf>
+Package pdftex.def Info: images/admittance_control_schematic.pdf  used on input
+ line 314.
+(pdftex.def)             Requested size: 271.01248pt x 71.60794pt.
+ [13 <./images/impedance_control_schematic.pdf> <./images/admittance_control_sc
+hematic.pdf>]
 Chapter 5.
-[12
+[14
 
 ]
-<images/dwa.png, id=683, 1034.86626pt x 432.61626pt>
+<images/dwa.png, id=902, 1034.86626pt x 432.61626pt>
 File: images/dwa.png Graphic file (type png)
 <use images/dwa.png>
-Package pdftex.def Info: images/dwa.png  used on input line 327.
+Package pdftex.def Info: images/dwa.png  used on input line 357.
 (pdftex.def)             Requested size: 271.01248pt x 113.29611pt.
- [13 <./images/dwa.png>]
-<images/pot_field.png, id=701, 1296.845pt x 502.87875pt>
+ [15 <./images/dwa.png>]
+<images/pot_field.png, id=918, 1296.845pt x 502.87875pt>
 File: images/pot_field.png Graphic file (type png)
 <use images/pot_field.png>
-Package pdftex.def Info: images/pot_field.png  used on input line 400.
+Package pdftex.def Info: images/pot_field.png  used on input line 435.
 (pdftex.def)             Requested size: 271.01248pt x 105.08586pt.
- [14 <./images/pot_field.png>] [15]
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[16] [17 <./images/pot_field.png>]
 Chapter 6.
-<images/controller_overview.jpg, id=722, 1529.715pt x 715.67375pt>
-File: images/controller_overview.jpg Graphic file (type jpg)
-<use images/controller_overview.jpg>
-Package pdftex.def Info: images/controller_overview.jpg  used on input line 412
+<images/controller_overview.pdf, id=939, 722.7pt x 333.245pt>
+File: images/controller_overview.pdf Graphic file (type pdf)
+<use images/controller_overview.pdf>
+Package pdftex.def Info: images/controller_overview.pdf  used on input line 448
 .
-(pdftex.def)             Requested size: 271.01248pt x 126.78453pt.
-[16
+(pdftex.def)             Requested size: 271.01248pt x 124.96655pt.
+
+LaTeX Font Warning: Font shape `OT1/cmr/bx/sc' undefined
+(Font)              using `OT1/cmr/bx/n' instead on input line 459.
+
+[18
 
 ]
-LaTeX Font Info:    Calculating math sizes for size <6.99997> on input line 448
+LaTeX Font Info:    Calculating math sizes for size <6.99997> on input line 484
 .
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <3.49998> not available
-(Font)              size <5> substituted on input line 448.
+(Font)              size <5> substituted on input line 484.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <3.49998> not available
-(Font)              size <5> substituted on input line 448.
+(Font)              size <5> substituted on input line 484.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <3.49998> not available
-(Font)              size <5> substituted on input line 448.
+(Font)              size <5> substituted on input line 484.
 
 
 LaTeX Font Warning: Font shape `TS1/cmr/m/n' in size <3.49998> not available
-(Font)              size <5> substituted on input line 448.
+(Font)              size <5> substituted on input line 484.
 
-<images/admittance_model.jpg, id=748, 852.18375pt x 421.575pt>
+<images/admittance_model.jpg, id=964, 852.18375pt x 421.575pt>
 File: images/admittance_model.jpg Graphic file (type jpg)
 <use images/admittance_model.jpg>
-Package pdftex.def Info: images/admittance_model.jpg  used on input line 464.
+Package pdftex.def Info: images/admittance_model.jpg  used on input line 501.
 (pdftex.def)             Requested size: 271.01248pt x 134.0705pt.
-[17 <./images/controller_overview.jpg>] [18 <./images/admittance_model.jpg>]
-[19]
-<images/costmap.png, id=796, 1046.40938pt x 735.74875pt>
+[19 <./images/controller_overview.pdf>] [20 <./images/admittance_model.jpg>]
+[21]
+<images/costmap.png, id=1238, 1046.40938pt x 735.74875pt>
 File: images/costmap.png Graphic file (type png)
 <use images/costmap.png>
-Package pdftex.def Info: images/costmap.png  used on input line 643.
+Package pdftex.def Info: images/costmap.png  used on input line 681.
 (pdftex.def)             Requested size: 271.01248pt x 190.5492pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[20] [21 <./images/costmap.png>] [22]
+[22] [23 <./images/costmap.png>] [24]
 Chapter 7.
-<images/test_setup.jpg, id=830, 4625.28pt x 3083.52pt>
+<images/test_setup.jpg, id=1272, 4625.28pt x 3083.52pt>
 File: images/test_setup.jpg Graphic file (type jpg)
 <use images/test_setup.jpg>
-Package pdftex.def Info: images/test_setup.jpg  used on input line 729.
+Package pdftex.def Info: images/test_setup.jpg  used on input line 767.
 (pdftex.def)             Requested size: 271.01248pt x 180.67456pt.
-<images/test18_x.jpg, id=834, 3372.6pt x 1704.3675pt>
+<images/test18_x.jpg, id=1274, 3372.6pt x 1704.3675pt>
 File: images/test18_x.jpg Graphic file (type jpg)
 <use images/test18_x.jpg>
-Package pdftex.def Info: images/test18_x.jpg  used on input line 742.
+Package pdftex.def Info: images/test18_x.jpg  used on input line 780.
 (pdftex.def)             Requested size: 271.01248pt x 136.95033pt.
-<images/test18_y.jpg, id=835, 3372.6pt x 1704.3675pt>
+[25
+
+ <./images/test_setup.jpg>]
+<images/test18_y.jpg, id=1281, 3372.6pt x 1704.3675pt>
 File: images/test18_y.jpg Graphic file (type jpg)
 <use images/test18_y.jpg>
-Package pdftex.def Info: images/test18_y.jpg  used on input line 749.
+Package pdftex.def Info: images/test18_y.jpg  used on input line 787.
 (pdftex.def)             Requested size: 271.01248pt x 136.95033pt.
-<images/test18_theta.jpg, id=836, 3372.6pt x 1704.3675pt>
+<images/test18_theta.jpg, id=1282, 3372.6pt x 1704.3675pt>
 File: images/test18_theta.jpg Graphic file (type jpg)
 <use images/test18_theta.jpg>
-Package pdftex.def Info: images/test18_theta.jpg  used on input line 756.
+Package pdftex.def Info: images/test18_theta.jpg  used on input line 794.
 (pdftex.def)             Requested size: 271.01248pt x 136.95033pt.
-[23
-
- <./images/test_setup.jpg>] [24 <./images/test18_x.jpg> <./images/test18_y.jpg>
- <./images/test18_theta.jpg>]
-<images/test2_setup.jpg, id=853, 4625.28pt x 3083.52pt>
+ [26 <./images/test18_x.jpg> <./images/test18_y.jpg>]
+<images/test2_setup.jpg, id=1296, 4625.28pt x 3083.52pt>
 File: images/test2_setup.jpg Graphic file (type jpg)
 <use images/test2_setup.jpg>
-Package pdftex.def Info: images/test2_setup.jpg  used on input line 775.
+Package pdftex.def Info: images/test2_setup.jpg  used on input line 815.
 (pdftex.def)             Requested size: 271.01248pt x 180.67456pt.
- [25 <./images/test2_setup.jpg>]
-<images/test2.jpg, id=863, 3372.6pt x 1704.3675pt>
+ [27 <./images/test18_theta.jpg> <./images/test2_setup.jpg>]
+<images/test2.jpg, id=1305, 3372.6pt x 1704.3675pt>
 File: images/test2.jpg Graphic file (type jpg)
 <use images/test2.jpg>
-Package pdftex.def Info: images/test2.jpg  used on input line 786.
+Package pdftex.def Info: images/test2.jpg  used on input line 826.
 (pdftex.def)             Requested size: 271.01248pt x 136.95033pt.
-<images/test2_costmap.jpg, id=864, 3372.6pt x 1704.3675pt>
+<images/test2_costmap.jpg, id=1306, 3372.6pt x 1704.3675pt>
 File: images/test2_costmap.jpg Graphic file (type jpg)
 <use images/test2_costmap.jpg>
-Package pdftex.def Info: images/test2_costmap.jpg  used on input line 793.
+Package pdftex.def Info: images/test2_costmap.jpg  used on input line 833.
 (pdftex.def)             Requested size: 271.01248pt x 136.95033pt.
-<images/test16_setup2.jpg, id=866, 4625.28pt x 3083.52pt>
+<images/test16_setup2.jpg, id=1310, 4625.28pt x 3083.52pt>
 File: images/test16_setup2.jpg Graphic file (type jpg)
 <use images/test16_setup2.jpg>
-Package pdftex.def Info: images/test16_setup2.jpg  used on input line 803.
+Package pdftex.def Info: images/test16_setup2.jpg  used on input line 843.
 (pdftex.def)             Requested size: 271.01248pt x 180.67456pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<images/test16.jpg, id=868, 3372.6pt x 1704.3675pt>
+<images/test16.jpg, id=1312, 3372.6pt x 1704.3675pt>
 File: images/test16.jpg Graphic file (type jpg)
 <use images/test16.jpg>
-Package pdftex.def Info: images/test16.jpg  used on input line 812.
-(pdftex.def)             Requested size: 271.01248pt x 136.95033pt.
-<images/test15_setup.png, id=870, 1686.3pt x 945.03062pt>
+Package pdftex.def Info: images/test16.jpg  used on input line 852.
+(pdftex.def)             Requested size: 325.21278pt x 164.33519pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [28 <./images/test2.jpg> <./images/test2_costmap.jpg>]
+<images/test15_setup.png, id=1321, 1686.3pt x 945.03062pt>
 File: images/test15_setup.png Graphic file (type png)
 <use images/test15_setup.png>
-Package pdftex.def Info: images/test15_setup.png  used on input line 821.
+Package pdftex.def Info: images/test15_setup.png  used on input line 863.
 (pdftex.def)             Requested size: 271.01248pt x 151.8713pt.
-[26 <./images/test2.jpg> <./images/test2_costmap.jpg>]
-<images/test15_response.jpg, id=878, 3372.6pt x 1704.3675pt>
+<images/test15_response.jpg, id=1322, 3372.6pt x 1704.3675pt>
 File: images/test15_response.jpg Graphic file (type jpg)
 <use images/test15_response.jpg>
-Package pdftex.def Info: images/test15_response.jpg  used on input line 828.
+Package pdftex.def Info: images/test15_response.jpg  used on input line 870.
 (pdftex.def)             Requested size: 271.01248pt x 136.95033pt.
- [27 <./images/test16_setup2.jpg> <./images/test16.jpg>] [28 <./images/test15_s
+ [29 <./images/test16_setup2.jpg> <./images/test16.jpg>] [30 <./images/test15_s
 etup.png> <./images/test15_response.jpg>]
 Chapter 8.
-[29
+[31
 
 ]
 Chapter 9.
-LaTeX Font Info:    Try loading font information for OMS+cmtt on input line 849
+LaTeX Font Info:    Try loading font information for OMS+cmtt on input line 900
 .
-LaTeX Font Info:    No file OMScmtt.fd. on input line 849.
+LaTeX Font Info:    No file OMScmtt.fd. on input line 900.
 
 LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbackslash' on input line 849.
+(Font)              for symbol `textbackslash' on input line 900.
 
 
 Package natbib Warning: Citation `Raibert1986LeggedRobotsThatBalance' on page 3
-0 undefined on input line 859.
+2 undefined on input line 910.
 
 
 Package natbib Warning: Citation `Raibert1986LeggedRobotsThatBalance' on page 3
-0 undefined on input line 859.
+2 undefined on input line 910.
 
 
-Package natbib Warning: Citation `Vukobratovic2004ZeroMomentPoint' on page 30 u
-ndefined on input line 859.
+Package natbib Warning: Citation `Vukobratovic2004ZeroMomentPoint' on page 32 u
+ndefined on input line 910.
 
 
-Package natbib Warning: Citation `Pratt1995SEA' on page 30 undefined on input l
-ine 859.
+Package natbib Warning: Citation `Pratt1995SEA' on page 32 undefined on input l
+ine 910.
 
-[30
+[32
 
-] [31]
-<images/k_surf.pdf, id=913, 321.2pt x 245.91875pt>
+] [33]
+<images/k_surf.pdf, id=1358, 321.2pt x 245.91875pt>
 File: images/k_surf.pdf Graphic file (type pdf)
 <use images/k_surf.pdf>
-Package pdftex.def Info: images/k_surf.pdf  used on input line 966.
+Package pdftex.def Info: images/k_surf.pdf  used on input line 1017.
 (pdftex.def)             Requested size: 271.01248pt x 207.50093pt.
-<images/cycle_we.pdf, id=914, 346.29375pt x 248.93pt>
+<images/cycle_we.pdf, id=1359, 346.29375pt x 248.93pt>
 File: images/cycle_we.pdf Graphic file (type pdf)
 <use images/cycle_we.pdf>
-Package pdftex.def Info: images/cycle_we.pdf  used on input line 988.
+Package pdftex.def Info: images/cycle_we.pdf  used on input line 1039.
 (pdftex.def)             Requested size: 173.44644pt x 124.68118pt.
-<images/cycle_ml.pdf, id=915, 341.275pt x 248.93pt>
+<images/cycle_ml.pdf, id=1360, 341.275pt x 248.93pt>
 File: images/cycle_ml.pdf Graphic file (type pdf)
 <use images/cycle_ml.pdf>
-Package pdftex.def Info: images/cycle_ml.pdf  used on input line 992.
+Package pdftex.def Info: images/cycle_ml.pdf  used on input line 1043.
 (pdftex.def)             Requested size: 173.44644pt x 126.5158pt.
- [32 <./images/k_surf.pdf>]
-LaTeX Font Info:    Try loading font information for OML+cmr on input line 1020
+ [34 <./images/k_surf.pdf>]
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 1071
 .
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/base/omlcmr.fd
 File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/bx/it' in size <10> not available
-(Font)              Font shape `OML/cmm/b/it' tried instead on input line 1020.
+(Font)              Font shape `OML/cmm/b/it' tried instead on input line 1071.
 
 LaTeX Font Info:    Font shape `OML/cmr/bx/it' in size <7> not available
-(Font)              Font shape `OML/cmm/b/it' tried instead on input line 1020.
+(Font)              Font shape `OML/cmm/b/it' tried instead on input line 1071.
 
 LaTeX Font Info:    Font shape `OML/cmr/bx/it' in size <5> not available
-(Font)              Font shape `OML/cmm/b/it' tried instead on input line 1020.
+(Font)              Font shape `OML/cmm/b/it' tried instead on input line 1071.
 
 )
-Overfull \hbox (6.011pt too wide) in paragraph at lines 1028--93
+Overfull \hbox (6.011pt too wide) in paragraph at lines 1079--93
 []\OT1/cmr/m/n/10 Einheiten wer-den mit den Be-fehlen \OMS/cmtt/m/n/10 n\OT1/cm
 tt/m/n/10 unit[1]\OMS/cmtt/m/n/10 f\OT1/cmtt/m/n/10 m\OMS/cmtt/m/n/10 g \OT1/cm
 r/m/n/10 (z.B. 1m) und \OMS/cmtt/m/n/10 n\OT1/cmtt/m/n/10 unitfrac[1]\OMS/cmtt/
@@ -1760,50 +1798,51 @@ m/n/10 f\OT1/cmtt/m/n/10 m\OMS/cmtt/m/n/10 gf\OT1/cmtt/m/n/10 s\OMS/cmtt/m/n/10
  g
  []
 
-[33 <./images/cycle_we.pdf> <./images/cycle_ml.pdf>] [34
+[35 <./images/cycle_we.pdf> <./images/cycle_ml.pdf>] [36
 
 ] (./report.bbl
-Underfull \hbox (badness 6063) in paragraph at lines 80--83
+[37
+
+]
+Underfull \hbox (badness 6063) in paragraph at lines 110--113
 []\OT1/cmr/m/n/10 ``Universal robot 10,'' []$https : / / www . universal -[] ro
 bots . com / products / ur10 -[]
  []
 
 
-Underfull \hbox (badness 1603) in paragraph at lines 90--93
+Underfull \hbox (badness 1603) in paragraph at lines 120--123
 []\OT1/cmr/m/n/10 ``Hokuyo ust-10lx,'' []$https : / / www . hokuyo -[] usa . co
 m / products / scanning -[] laser -[]
  []
 
 
-Underfull \hbox (badness 1694) in paragraph at lines 100--103
+Underfull \hbox (badness 1694) in paragraph at lines 130--133
 []\OT1/cmr/m/n/10 N. Hogan, ``Impedance con-trol: An ap-proach to ma-nip-u-la-t
 ion: Part
  []
 
-[35
 
-]
-Underfull \hbox (badness 10000) in paragraph at lines 115--118
+Underfull \hbox (badness 10000) in paragraph at lines 151--154
 []\OT1/cmr/m/n/10 ``Wrenchstamped mes-sage def-i-ni-tion,'' []$http : / / docs 
 . ros . org / indigo / api /
  []
 
 
-Underfull \hbox (badness 3954) in paragraph at lines 138--141
+Underfull \hbox (badness 3954) in paragraph at lines 174--177
 []\OT1/cmr/m/n/10 ``Followjointtrajectory ac-tion def-i-ni-tion,'' []$http : / 
 / docs . ros . org / api / control[]
  []
 
-) [36] (./chapters/appendix_text.tex
+) [38] (./chapters/appendix_text.tex
 Appendix A.
-) [37
+) [39
 
 
-] [38
+] [40
 
 ] (./chapters/appendix_datasheets.tex
 Appendix B.
-<images/datasheets.pdf, id=979, 625.95839pt x 845.04489pt>
+<images/datasheets.pdf, id=1426, 625.95839pt x 845.04489pt>
 File: images/datasheets.pdf Graphic file (type pdf)
 <use images/datasheets.pdf>
 Package pdftex.def Info: images/datasheets.pdf  used on input line 3.
@@ -1812,7 +1851,7 @@ File: images/datasheets.pdf Graphic file (type pdf)
 <use images/datasheets.pdf>
 Package pdftex.def Info: images/datasheets.pdf  used on input line 3.
 (pdftex.def)             Requested size: 625.95686pt x 845.04283pt.
-<images/datasheets.pdf, id=982, page=1, 625.95839pt x 845.04489pt>
+<images/datasheets.pdf, id=1429, page=1, 625.95839pt x 845.04489pt>
 File: images/datasheets.pdf Graphic file (type pdf)
 <use images/datasheets.pdf, page 1>
 Package pdftex.def Info: images/datasheets.pdf , page1 used on input line 3.
@@ -1821,7 +1860,7 @@ File: images/datasheets.pdf Graphic file (type pdf)
 <use images/datasheets.pdf, page 1>
 Package pdftex.def Info: images/datasheets.pdf , page1 used on input line 3.
 (pdftex.def)             Requested size: 469.46764pt x 633.78212pt.
-[39
+[41
 
 ]
 File: images/datasheets.pdf Graphic file (type pdf)
@@ -1836,8 +1875,8 @@ File: images/datasheets.pdf Graphic file (type pdf)
 <use images/datasheets.pdf, page 1>
 Package pdftex.def Info: images/datasheets.pdf , page1 used on input line 3.
 (pdftex.def)             Requested size: 469.46764pt x 633.78212pt.
- [40 <./images/datasheets.pdf>]
-<images/datasheets.pdf, id=1048, page=2, 625.96059pt x 845.0471pt>
+ [42 <./images/datasheets.pdf>]
+<images/datasheets.pdf, id=1496, page=2, 625.96059pt x 845.0471pt>
 File: images/datasheets.pdf Graphic file (type pdf)
 <use images/datasheets.pdf, page 2>
 Package pdftex.def Info: images/datasheets.pdf , page2 used on input line 3.
@@ -1850,17 +1889,22 @@ File: images/datasheets.pdf Graphic file (type pdf)
 <use images/datasheets.pdf, page 2>
 Package pdftex.def Info: images/datasheets.pdf , page2 used on input line 3.
 (pdftex.def)             Requested size: 469.46928pt x 633.78378pt.
- [41 <./images/datasheets.pdf>])
+ [43 <./images/datasheets.pdf>])
 
 Package natbib Warning: There were undefined citations.
 
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 117.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 117.
-(./report.aux)
+(./report.aux
+
+Package natbib Warning: Citation(s) may have changed.
+(natbib)                Rerun to get citations correct.
+
+)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 117.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 117.
 Package rerunfilecheck Info: File `report.out' has not changed.
-(rerunfilecheck)             Checksum: C27A54DD5E7C3ECF33FB8E8D57C54473;2502.
+(rerunfilecheck)             Checksum: B07C977A1A9BD1A56422AFC32D57B280;2502.
 
 
 LaTeX Font Warning: Size substitutions with differences
@@ -1872,11 +1916,11 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 117.
  ) 
 Here is how much of TeX's memory you used:
- 31709 strings out of 492649
- 624380 string characters out of 6129622
- 703691 words of memory out of 5000000
- 34812 multiletter control sequences out of 15000+600000
- 556735 words of font info for 123 fonts, out of 8000000 for 9000
+ 31752 strings out of 492649
+ 625627 string characters out of 6129622
+ 703692 words of memory out of 5000000
+ 34847 multiletter control sequences out of 15000+600000
+ 556430 words of font info for 122 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,21n,65p,10357b,495s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
@@ -1896,18 +1940,17 @@ live/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texliv
 e/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2
 018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2018
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2018/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2018/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2018/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2018/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2018/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2018/texmf-di
-st/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2018/texm
-f-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2018/texmf-
-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on report.pdf (53 pages, 53047104 bytes).
+xmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2018/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2018/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2018/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2018/texmf-d
+ist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2018/tex
+mf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2018/texmf
+-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
+Output written on report.pdf (55 pages, 54345628 bytes).
 PDF statistics:
- 1242 PDF objects out of 1440 (max. 8388607)
- 1020 compressed objects within 11 object streams
- 210 named destinations out of 1000 (max. 500000)
- 505 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1689 PDF objects out of 1728 (max. 8388607)
+ 1374 compressed objects within 14 object streams
+ 217 named destinations out of 1000 (max. 500000)
+ 515 words of extra memory for PDF output out of 10000 (max. 10000000)
 

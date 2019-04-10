@@ -18,22 +18,16 @@
 \contentsline {section}{\numberline {6.1}Admittance Control and Obstacle Avoidance Fusion}{19}{section.6.1}
 \contentsline {subsection}{\numberline {6.1.1}Control Parameters}{20}{subsection.6.1.1}
 \contentsline {subsection}{\numberline {6.1.2}Costmap of the Obstacle Potential}{22}{subsection.6.1.2}
-\contentsline {section}{\numberline {6.2}Task Priority Inverse Kinematics}{23}{section.6.2}
+\contentsline {section}{\numberline {6.2}Task Priority Inverse Kinematics}{24}{section.6.2}
 \contentsline {chapter}{\numberline {7}Results}{25}{chapter.7}
 \contentsline {section}{\numberline {7.1}Admittance Control Performance}{25}{section.7.1}
-\contentsline {section}{\numberline {7.2}Obstacle Avoidance and Admittance Control Performance}{26}{section.7.2}
+\contentsline {section}{\numberline {7.2}Obstacle Avoidance and Admittance Control Performance}{27}{section.7.2}
 \contentsline {subsection}{\numberline {7.2.1}Frontal Obstacle}{27}{subsection.7.2.1}
-\contentsline {subsection}{\numberline {7.2.2}Corner}{28}{subsection.7.2.2}
-\contentsline {subsection}{\numberline {7.2.3}Cluttered Space}{29}{subsection.7.2.3}
-\contentsline {chapter}{\numberline {8}Discussion}{31}{chapter.8}
-\contentsline {chapter}{\numberline {9}Einige wichtige Hinweise zum Arbeiten mit \LaTeX \ }{32}{chapter.9}
-\contentsline {section}{\numberline {9.1}Gliederungen}{32}{section.9.1}
-\contentsline {section}{\numberline {9.2}Referenzen und Verweise}{32}{section.9.2}
-\contentsline {section}{\numberline {9.3}Aufz\IeC {\"a}hlungen}{32}{section.9.3}
-\contentsline {section}{\numberline {9.4}Erstellen einer Tabelle}{33}{section.9.4}
-\contentsline {section}{\numberline {9.5}Einbinden einer Grafik}{34}{section.9.5}
-\contentsline {section}{\numberline {9.6}Mathematische Formeln}{34}{section.9.6}
-\contentsline {section}{\numberline {9.7}Weitere n\IeC {\"u}tzliche Befehle}{35}{section.9.7}
-\contentsline {chapter}{Bibliography}{38}{chapter*.12}
-\contentsline {chapter}{\numberline {A}Code}{39}{appendix.A}
-\contentsline {chapter}{\numberline {B}Datasheets}{41}{appendix.B}
+\contentsline {subsection}{\numberline {7.2.2}Corner}{27}{subsection.7.2.2}
+\contentsline {subsection}{\numberline {7.2.3}Cluttered Space}{30}{subsection.7.2.3}
+\contentsline {chapter}{\numberline {8}Discussion}{32}{chapter.8}
+\contentsline {chapter}{Bibliography}{36}{chapter*.12}
+\contentsline {chapter}{\numberline {A}Thing Admittance Control Source Code}{37}{appendix.A}
+\contentsline {section}{\numberline {A.1}Header}{37}{section.A.1}
+\contentsline {section}{\numberline {A.2}Node}{41}{section.A.2}
+\contentsline {section}{\numberline {A.3}Definition}{44}{section.A.3}
